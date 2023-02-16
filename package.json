@@ -1,20 +1,30 @@
 {
   "name": "cocktails_project",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "https://AlinaS13.github.io/cocktails_project",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --base=/cocktails_project/",
-    "preview": "vite preview"
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /cocktails_project/"
   },
-  "devDependencies": {
-    "vite": "^4.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
+  "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+  },
   "dependencies": {
-    "vite-plugin-full-reload": "^1.0.5",
-    "vite-plugin-html-inject": "^1.0.1"
-  }
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
