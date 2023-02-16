@@ -1,0 +1,42 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  background: var(--light-bg-color);
+  margin: 0;
+}
+
+// .section-title {
+//   @include font(400, 30px, 1.27, 0.04em);
+//   text-align: center;
+//   text-transform: uppercase;
+//   color: var(--light-text-color);
+
+//   @include tablet {
+//     @include font(null, 34px, null, null);
+//   }
+//   @include desktop {
+//     @include font(null, 36px, 1.25, 0.06em);
+//   }
+// }
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}

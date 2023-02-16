@@ -1,2 +1,19 @@
 @import './utilits/variables';
 @import './utilits/mixins';
+
+@import './components/buttons';
+@import './components/container';
+
+@import './base/common';
+@import './base/reset';
+
+@import './layouts/header';
+@import './layouts/burger-menu';
+@import './layouts/hero';
+@import './layouts/gallery';
+@import './layouts/footer';
+@import './layouts/favorite-cocktails';
+@import './layouts/favorite-ingredients';
+
+@import './layouts/modal-cocktails';
+@import './layouts/modal-ingredients';
