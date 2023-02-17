@@ -1,0 +1,114 @@
+.button-add {
+    @include font(600, 14px, 1.71, 0.02);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    min-width: 108px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 4px;
+    border: 1px solid $brend-color;
+    border-radius: 4px;
+    background: transparent;
+    font-family: 'Roboto';
+    text-align: center;
+    justify-content: center;
+    color: $btn-color;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+      background-color: #f5f5f5;
+    }
+    &:active {
+      background-color: transparent;
+    }
+  
+    @include tablet {
+      gap: 0;
+      min-width: 123px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      @include font(null, 20px, 1.2, null);
+    }
+  
+    @include desktop {
+      min-width: 141px;
+    }
+  }
+  .button-more {
+    min-width: 110px;
+    align-items: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: $btn-color;
+    font-family: 'Roboto';
+    line-height: 1.71;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #ffff;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+      background-color: #f5f5f5;
+      color: $brend-color;
+    }
+    &:active {
+      background-color: $brend-color;
+      color: #ffff;
+    }
+  
+    @include tablet {
+      min-width: 160px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      @include font(null, 20px, 1.2, null);
+    }
+  
+    @include desktop {
+      min-width: 182px;
+    }
+  }
+  
+  .button-remove {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    min-width: 108px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    border-radius: 4px;
+    border: 1px solid $brend-color;
+    border-radius: 4px;
+    background: transparent;
+    font-family: 'Roboto';
+    line-height: 1.71;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+    color: $buttonColor;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+      background-color: #f5f5f5;
+    }
+    &:active {
+      background-color: transparent;
+    }
+  
+    @include tablet {
+      gap: 0;
+      min-width: 123px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      @include font(null, 20px, 1.2, null);
+    }
+  
+    @include desktop {
+      min-width: 141px;
+    }
+  }
