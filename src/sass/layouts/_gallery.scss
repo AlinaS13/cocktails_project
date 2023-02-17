@@ -1,0 +1,33 @@
+.gallery__headling {
+    font-family: 'Poppins', sans-serif;
+   @include font(700, 48px, 72px, 1.5)
+}
+
+.gallery__list {
+    display: grid;
+    grid-template-columns: repeat(3, 395px);
+    gap: 10px;
+    margin-top: 60px;
+}
+
+.gallery__card {
+    border: 1px solid #FD5103;
+}
+
+.gallery__card img {
+    display: block;
+    max-width: 100%;
+}
+
+.gallery__info {
+    margin-top: 20px;
+    margin-bottom: 27px;
+    text-align: center;
+}
+
+.gallery__title {
+    display: block;
+    margin-bottom: 27px;
+    font-family: 'Roboto', sans-serif;
+   @include font(900, 32px, 38px, 1.5)
+}
