@@ -1,0 +1,53 @@
+li {
+  list-style: none;
+}
+.coctails-title {
+  @include mobile {
+    @include font(700, 48px, 72px, null);
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.coctails__list {
+  display: flex;
+
+  flex-wrap: wrap;
+  @include mobile {
+    gap: 20px;
+  }
+}
+.coctails-card {
+  max-width: 395px;
+
+  border: 1px solid var(--brend-color);
+}
+.coctails__desc {
+  padding: 20px 28px 28px;
+}
+.coctails-card__title {
+  @include font(900, 32px, 38px, 2%);
+  margin-bottom: 28px;
+}
+.coctails-card__description {
+  color: var(--primary-text-color);
+  margin-bottom: 28px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.button__more {
+  border-radius: 4px;
+  background-color: var(--btn-color);
+  padding: 12px 28px;
+  margin-right: 16px;
+}
+.button__remove {
+  border-radius: 4px;
+
+  padding: 12px 28px;
+}
+.coctails__image {
+  width: 100%;
+}

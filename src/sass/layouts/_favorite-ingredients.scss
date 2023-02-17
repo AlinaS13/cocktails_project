@@ -1,0 +1,29 @@
+.ingredients__title {
+  @include mobile {
+    @include font(700, 48px, 72px, null);
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.ingredients-gellery {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  @include mobile {
+    gap: 20px;
+  }
+}
+.igredient-card {
+  max-width: 395px;
+  padding: 30px 28px 26px;
+  border: 1px solid var(--brend-color);
+}
+.ingredient-card__title {
+  @include font(900, 32px, 38px, 2%);
+  margin-bottom: 28px;
+}
+.ingredient-card__description {
+  color: var(--primary-text-color);
+  margin-bottom: 28px;
+}

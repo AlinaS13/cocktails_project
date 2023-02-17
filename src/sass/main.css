@@ -1,0 +1,204 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+:root {
+  --brend-color: #fd5103;
+  --light-text-color: #fcfcfc;
+  --dark-text-color: #202025;
+  --light-bg-color: #fcfcfc;
+  --dark-bg-color: #202025;
+  --primary-text-color: #5f6775;
+  --btn-color: #fe7031;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 33px;
+    padding-right: 33px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  background: var(--light-bg-color);
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+@media screen and (min-width: 480px) {
+  .coctails-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.coctails__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 480px) {
+  .coctails__list {
+    gap: 20px;
+  }
+}
+
+.coctails-card {
+  max-width: 395px;
+  border: 1px solid var(--brend-color);
+}
+
+.coctails__desc {
+  padding: 20px 28px 28px;
+}
+
+.coctails-card__title {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 2%;
+  margin-bottom: 28px;
+}
+
+.coctails-card__description {
+  color: var(--primary-text-color);
+  margin-bottom: 28px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button__more {
+  border-radius: 4px;
+  background-color: var(--btn-color);
+  padding: 12px 28px;
+  margin-right: 16px;
+}
+
+.button__remove {
+  border-radius: 4px;
+  padding: 12px 28px;
+}
+
+.coctails__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .ingredients__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.ingredients-gellery {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 480px) {
+  .ingredients-gellery {
+    gap: 20px;
+  }
+}
+
+.igredient-card {
+  max-width: 395px;
+  padding: 30px 28px 26px;
+  border: 1px solid var(--brend-color);
+}
+
+.ingredient-card__title {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 2%;
+  margin-bottom: 28px;
+}
+
+.ingredient-card__description {
+  color: var(--primary-text-color);
+  margin-bottom: 28px;
+}/*# sourceMappingURL=main.css.map */
