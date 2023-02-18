@@ -1,13 +1,38 @@
+//add styles
+
+.gallery {
+    margin: 0 auto;
+    text-align: center;
+}
 .gallery__headling {
     font-family: 'Poppins', sans-serif;
-   @include font(700, 48px, 72px, 1.5)
+    @include font(600, 22px, 42px, 1.5);
+
+    @include tablet {
+    @include font(600, 32px, 42px, 1.5);  
+    }
+   @include desktop {
+    @include font(700, 48px, 72px, 1.5);
+   }
 }
 
 .gallery__list {
-    display: grid;
-    grid-template-columns: repeat(3, 395px);
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     margin-top: 60px;
+    width: 280px;
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 335px);
+        gap: 32px;
+    }
+    @include desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 395px);
+        gap: 32px;
+    }
+    
 }
 
 .gallery__card {
@@ -27,7 +52,41 @@
 
 .gallery__title {
     display: block;
-    margin-bottom: 27px;
+    margin-top: 48px;
+    margin-bottom: 16px;
     font-family: 'Roboto', sans-serif;
-   @include font(900, 32px, 38px, 1.5)
+    @include font(900, 26px, 42px, 1.5);
+
+    @include tablet {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        @include font(900, 28px, 33px, 1.5)
+    }
+    @include desktop {
+        margin-bottom: 27px;
+        @include font(900, 32px, 38px, 1.5)
+    }
 }
+
+.button__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    @include tablet {
+        gap: 12px;
+    }
+    @include desktop {
+        gap: 16px;
+    }
+}
+
+.button-add__icon {
+    display: inline-block;
+    width: 17px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('../img/heart.png');
+    background-size: cover;
+}
+

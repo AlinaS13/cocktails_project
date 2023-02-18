@@ -1,5 +1,9 @@
 import renderFunc from '../js/renderFunc';
+import fetchData from '../js/fetch';
 
-renderFunc.renderRandomImg();
+// clear gallery markup
+renderFunc.clearGallery();
 
-// renderFunc.renderByName('margarita');
+//render random images depending on client viewport
+for (let i = 0; i < renderFunc.itemsPerPage; i++)
+  renderFunc.renderCocktails(fetchData.fetchRandomCocktail, 'q');
