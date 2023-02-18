@@ -5,76 +5,35 @@ const instance = axios.create({
 });
 
 const fetchCocktailByName = async s => {
-  try {
-    const { data } = await instance.get('/search.php', {
-      params: {
-        s,
-      },
-    });
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  return makeRequest('/search.php', { s });
 };
 
 const fetchCocktailByLetter = async f => {
-  try {
-    const { data } = await instance.get('/search.php', {
-      params: {
-        f,
-      },
-    });
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  return makeRequest('/search.php', { f });
 };
 
 const fetchIngredientByName = async i => {
-  try {
-    const { data } = await instance.get('/search.php', {
-      params: {
-        i,
-      },
-    });
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  return makeRequest('/search.php', { i });
 };
 
 const fetchCocktailDetailsById = async i => {
-  try {
-    const { data } = await instance.get('/lookup.php', {
-      params: {
-        i,
-      },
-    });
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  return makeRequest('/lookup.php', { i });
 };
 
 const fetchIngredientyId = async iid => {
-  try {
-    const { data } = await instance.get('/lookup.php', {
-      params: {
-        iid,
-      },
-    });
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  return makeRequest('/lookup.php', { iid });
 };
 
 const fetchRandomCocktail = async () => {
+  return makeRequest('/random.php');
+};
+
+const makeRequest = async (url, params = {}) => {
   try {
-    const { data } = await instance.get('/random.php');
+    const { data } = await instance.get(url, { params });
     return data;
-  } catch (error) {
-    console.log(error);
+  } catch {
+    return [];
   }
 };
 
