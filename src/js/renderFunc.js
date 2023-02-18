@@ -1,5 +1,5 @@
 //import fetchData from '../js/fetch';
-const svg = require('../img/icons.svg');
+const svgLink = require('../img/icons.svg');
 
 const gallery = document.querySelector('.gallery__list');
 
@@ -23,9 +23,9 @@ function createMarkup(arr) {
              <div class="gallery__info">
                 <h5 class="gallery__title">${strDrink}</h5>
                 <div class="button__container">
-                  <button class="button-more">Learn more</button>
-                  <button class="button-add">Add to <svg class="svg" width="21" height="19">
-                  <use href="${svg}#icon-heart-filled"></use>
+                  <button class="button-more" type="button">Learn more</button>
+                  <button class="button-add" type="button">Add to <svg class="icon" width="21" height="19">
+                  <use href="${svgLink}#icon-heart-filled"></use>
                   </svg></button>
                 </div>
              </div>
