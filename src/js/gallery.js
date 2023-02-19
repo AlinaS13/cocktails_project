@@ -5,5 +5,13 @@ import fetchData from '../js/fetch';
 renderFunc.clearGallery();
 
 //render random images depending on client viewport
-for (let i = 0; i < renderFunc.itemsPerPage; i++)
-  renderFunc.renderCocktails(fetchData.fetchRandomCocktail, 'q');
+
+// renderFunc.fetchCoctails(fetchData.fetchCocktailByLetter, 'a')
+// fetchData.fetchCocktailByName('margarita').then((a) => console.log(a))
+
+// function fetchCoctailsApi() {
+//   renderFunc.fetchCoctails(fetchData.fetchCocktailByLetter, 'a');
+// }
+
+    renderFunc.fetchCoctails(fetchData.fetchRandomCocktail);
+
