@@ -1,0 +1,32 @@
+.is-none {
+    display: none;
+  }
+
+.pagination-box {
+    padding-bottom: 60px;
+
+}
+
+.pagination-list {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pagination-button {
+    height: 40px;
+    width: 40px;
+    // border-radius: 50%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #1E1E1E;
+    background-color: var(--light-text-color);
+    border: 1px solid var(--btn-color);
+}
+
+.pagination-button--select {
+    color: #ffff;
+    background-color: var(--btn-color);
+}
