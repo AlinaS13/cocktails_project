@@ -7,11 +7,11 @@
   }
   @include tablet {
     max-width: 768px;
-    padding-left: 33px;
-    padding-right: 33px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
   @include desktop {
-    max-width: 1200px;
+    max-width: 1280px;
     padding-left: 16px;
     padding-right: 16px;
   }

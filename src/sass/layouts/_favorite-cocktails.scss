@@ -1,0 +1,53 @@
+.coctails-section {
+  padding-top: 90px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+.coctails-title {
+  font-family: 'Poppins', sans-serif;
+  @include font(600, 22px, 42px, 1.5);
+
+  @include tablet {
+    @include font(600, 32px, 42px, 1.5);
+  }
+  @include desktop {
+    @include font(700, 48px, 72px, 1.5);
+  }
+}
+
+.coctails__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 60px;
+  width: 280px;
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 335px);
+    gap: 32px;
+  }
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 395px);
+    gap: 32px;
+  }
+}
+
+.button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  @include tablet {
+    gap: 12px;
+  }
+  @include desktop {
+    gap: 16px;
+  }
+}
+
+.icon {
+  fill: #fcfcfc;
+}

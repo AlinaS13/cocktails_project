@@ -1,19 +1,17 @@
-//add styles
-
 .gallery {
-    margin: 0 auto;
-    text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 .gallery__headling {
-    font-family: 'Poppins', sans-serif;
-    @include font(600, 22px, 42px, 1.5);
+  font-family: 'Poppins', sans-serif;
+  @include font(600, 22px, 42px, 1.5);
 
-    @include tablet {
-    @include font(600, 32px, 42px, 1.5);  
-    }
-   @include desktop {
+  @include tablet {
+    @include font(600, 32px, 42px, 1.5);
+  }
+  @include desktop {
     @include font(700, 48px, 72px, 1.5);
-   }
+  }
 }
 
 .gallery__list {
@@ -56,8 +54,8 @@
 }
 
 .gallery__card img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 .gallery__info {
@@ -78,17 +76,18 @@
     @include desktop {
     height: 130px;
     margin-bottom: 0px;
-
-        justify-content:start;
+    justify-content:start;
     }
+
+  
 }
 
 .gallery__title {
-    display: block;
-    margin-top: 48px;
-    margin-bottom: 16px;
-    font-family: 'Roboto', sans-serif;
-    @include font(900, 26px, 42px, 1.5);
+  display: block;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-family: 'Roboto', sans-serif;
+  @include font(900, 26px, 42px, 1.5);
 
     @include tablet {
         margin-top: 20px;
@@ -101,21 +100,22 @@
 
         @include font(900, 32px, 38px, 1.5)
     }
+
 }
 
 .button__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    @include tablet {
-        gap: 12px;
-    }
-    @include desktop {
-        gap: 16px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  @include tablet {
+    gap: 12px;
+  }
+  @include desktop {
+    gap: 16px;
+  }
 }
 
 .icon {
-    fill: #fcfcfc;
-  }
+  fill: #fcfcfc;
+}
