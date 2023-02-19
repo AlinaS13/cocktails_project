@@ -1,34 +1,80 @@
+import fetchData from './fetch';
 const favCoctailsList = document.querySelector('.coctails__list');
-import drinks from '../js/ingredients.json';
+const addBtn = document.querySelector('.addBtn');
+const keys = {
+  localCoctailsKey: 'Favorit Coctails',
+  localIngredientsKey: 'Favorite ingredients',
+};
+let drinksObject = [];
+const getLocalStorege = () => {
+  const savedCoctaisGalery = localStorage.getItem(keys.localCoctailsKey);
 
-function onRemoveClick(e) {
-  console.log(e.target.id);
+  return JSON.parse(savedCoctaisGalery);
+};
+if (getLocalStorege()) {
+  drinksObject = [...getLocalStorege()];
+
+  renderFavoriteCoctails(getLocalStorege());
 }
-export default function renderFavoriteCoctails(localCoctails) {
-  const savedCoctaisGalery = localStorage.getItem(localCoctails);
-  const parsedCoctails = JSON.parse(savedCoctaisGalery);
 
-  if (parsedCoctails) {
-    const { drinks } = parsedCoctails;
-    const content = drinks.map(({ strDrink, strDrinkThumb, idDrink }) => {
-      return `<li class="coctails-card">
-    <img class="coctails__image" src="${strDrinkThumb}" alt="" />
-    <div class="coctails__desc">
-    <h3 class="coctails-card__title">${strDrink}</h3>
-    <div class="buttons">
-    <button type="button" class="button__more">Learn more</button>
-    <button type="button" class="button__remove" id=${idDrink}>Remove</button>
-    </div>
-    </div>
-    </li>`;
-    });
-    favCoctailsList.insertAdjacentHTML('beforeend', content.join(''));
+function createMarkup(arr) {
+  let markup = arr.map(
+    ({ strDrinkThumb, strDrink }) => `
+        <li class="gallery__card">
+            <img src='${strDrinkThumb}' alt='${strDrink}' class="gallery__photo" loading='lazy'/>
+             <div class="gallery__info">
+                <h5 class="gallery__title">${strDrink}</h5>
+                <div class="button__container">
+                  <button class="button-more">Learn more</button>
+                  <button class="button-add">Remove <span class="button-add__icon")">
+                  </span></button>
+                </div>
+             </div>
+            </li>
+      `
+  );
+  return markup.join('');
+}
+
+async function renderFavoriteCoctails() {
+  const getFotoByLSID = getLocalStorege().map(num => {
+    return fetchData.fetchCocktailDetailsById(num);
+  });
+  const response = await Promise.all(getFotoByLSID);
+  const result = response.map(({ drinks }) => drinks).flat(1);
+  favCoctailsList.insertAdjacentHTML('afterbegin', createMarkup(result));
+}
+// favCoctailsList.insertAdjacentHTML('beforeend', renderContent());
+function setLS() {
+  localStorage.setItem(keys.localCoctailsKey, JSON.stringify(drinksObject));
+}
+
+const onAddBtn = event => {
+  const num = Number(event.target.id);
+  console.log(num);
+  if (drinksObject.includes(num)) {
+    return;
   }
-}
-const removeBtn = document.querySelectorAll('.button__remove');
+  fetchData.fetchCocktailDetailsById(num).then(data => console.log(data));
+  drinksObject.push(num);
 
-// removeBtn.addEventListener('click', onRemoveClick);
+  favCoctailsList.innerHTML = '';
+  setLS();
+  renderFavoriteCoctails(getLocalStorege());
+};
+const onRemoveBtn = event => {
+  console.log();
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
 
-// const newDrink = { ...drinks };
-// newDrink.drinks.push('ads');
-// console.log('newDrink :', newDrink.drinks);
+  drinksObject.splice(drinksObject.indexOf(Number(event.target.id)), 1);
+
+  setLS();
+  favCoctailsList.innerHTML = '';
+  renderFavoriteCoctails();
+};
+
+favCoctailsList.addEventListener('click', onRemoveBtn);
+
+addBtn.addEventListener('click', onAddBtn);
