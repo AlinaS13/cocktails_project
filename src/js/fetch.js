@@ -1,4 +1,7 @@
 import axios from 'axios';
+import renderFunc from '../js/renderFunc';
+renderFunc.resolutionQuery
+const perPage = renderFunc.itemsPerPage
 
 const instance = axios.create({
   baseURL: 'https://www.thecocktaildb.com/api/json/v1/1',
@@ -25,7 +28,15 @@ const fetchIngredientyId = async iid => {
 };
 
 const fetchRandomCocktail = async () => {
-  return makeRequest('/random.php');
+  const response = {
+    drinks: []
+  }
+  for (let i = 0; i < perPage; i++) {
+    const arr = await makeRequest('/random.php')
+    // console.log('arr',arr)
+    response.drinks.push(arr.drinks[0])
+  }
+  return response
 };
 
 const makeRequest = async (url, params = {}) => {
