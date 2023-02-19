@@ -24,7 +24,7 @@ async function onSearch(e) {
   refsHero.letterBtn.innerHTML = `${heroLetter}<span class="hero-btn--arrow"></span>`;
   refsHero.letterBtn.classList.add('active-btn');
 
-  renderCocktails.renderCocktails(fetchData.fetchCocktailByLetter, heroLetter);
+  renderCocktails.fetchCoctails(fetchData.fetchCocktailByLetter, heroLetter);
   const resData = await fetchData.fetchCocktailByLetter(heroLetter);
 
   if (resData?.drinks !== null) {

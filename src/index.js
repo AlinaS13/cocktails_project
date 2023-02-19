@@ -12,7 +12,8 @@ import heroLetter from './js/hero';
 // fetchData.fetchIngredientyId('552').then(res => console.log(res));
 // fetchData.fetchRandomCocktail().then(res => console.log(res));
 
-import renderFavoriteCoctails from './js/localStoregeCoctais';
+// import renderFavoriteCoctails from './js/localStoregeCoctais';
+
 import drinks from './js/ingredients.json';
 console.log(drinks);
 import { keys } from './js/localStoregeKeys';
@@ -22,6 +23,7 @@ function setLS() {
   localStorage.setItem(keys.localCoctailsKey, JSON.stringify(drinks));
 }
 // setLS();
+
 //TODO need fix for Andrey
 // renderFavoriteCoctails(keys.localCoctailsKey);
 
