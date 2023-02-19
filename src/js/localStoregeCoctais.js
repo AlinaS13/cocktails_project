@@ -1,7 +1,7 @@
 import fetchData from './fetch';
 const favCoctailsList = document.querySelector('.coctails__list');
 
-const addBtn = document.querySelector('.addBtn');
+// const addBtn = document.querySelector('.addBtn');
 const keys = {
   localCoctailsKey: 'Favorit Coctails',
   localIngredientsKey: 'Favorite ingredients',
@@ -52,7 +52,8 @@ function setLS() {
 }
 
 const onAddBtn = event => {
-  const num = Number(event.target.id);
+  // const num = Number(event.target.id);
+  const num = 13501;
   console.log(num);
   if (drinksObject.includes(num)) {
     return;
@@ -79,4 +80,5 @@ const onRemoveBtn = event => {
 
 favCoctailsList.addEventListener('click', onRemoveBtn);
 
-addBtn.addEventListener('click', onAddBtn);
+// addBtn.addEventListener('click', onAddBtn);
+onAddBtn();
