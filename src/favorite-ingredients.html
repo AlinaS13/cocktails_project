@@ -18,14 +18,29 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./sass/main.scss" />
-      <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
     <include src="./partials/header.html"></include>
     <include src="./partials/burger-menu.html"></include>
     <include src="./partials/footer.html"></include>
+    <div class="container">
+      <section class="intgredients-section">
+        <h2 class="ingredients__title">Favorite ingredients</h2>
+        <ul class="ingredients-list">
+          <li class="ingredient__card">
+            <h3 class="ingredient-card__title">Compari</h3>
+            <p class="ingredient-card__description">Lequer</p>
+            <div class="button__container">
+              <button type="button" class="button-more">Learn more</button>
+              <button type="button" class="button-add">Remove</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
 
     <include src="./partials/modal-cocktails.html"></include>
     <include src="./partials/modal-ingredients.html"></include>
