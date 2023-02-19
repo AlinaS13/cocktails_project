@@ -1,5 +1,6 @@
 import fetchData from './fetch';
 const favCoctailsList = document.querySelector('.coctails__list');
+
 const addBtn = document.querySelector('.addBtn');
 const keys = {
   localCoctailsKey: 'Favorit Coctails',
@@ -45,6 +46,7 @@ async function renderFavoriteCoctails() {
   favCoctailsList.insertAdjacentHTML('afterbegin', createMarkup(result));
 }
 // favCoctailsList.insertAdjacentHTML('beforeend', renderContent());
+
 function setLS() {
   localStorage.setItem(keys.localCoctailsKey, JSON.stringify(drinksObject));
 }

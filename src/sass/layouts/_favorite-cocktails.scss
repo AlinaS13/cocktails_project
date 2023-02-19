@@ -1,53 +1,53 @@
-li {
-  list-style: none;
+.coctails-section {
+  padding-top: 90px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+
+  text-align: center;
 }
 .coctails-title {
-  @include mobile {
-    @include font(700, 48px, 72px, null);
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  @include font(600, 22px, 42px, 1.5);
+
+  @include tablet {
+    @include font(600, 32px, 42px, 1.5);
+  }
+  @include desktop {
+    @include font(700, 48px, 72px, 1.5);
   }
 }
+
 .coctails__list {
   display: flex;
-
-  flex-wrap: wrap;
-  @include mobile {
-    gap: 20px;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 60px;
+  width: 280px;
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 335px);
+    gap: 32px;
+  }
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 395px);
+    gap: 32px;
   }
 }
-.coctails-card {
-  max-width: 395px;
 
-  border: 1px solid var(--brend-color);
-}
-.coctails__desc {
-  padding: 20px 28px 28px;
-}
-.coctails-card__title {
-  @include font(900, 32px, 38px, 2%);
-  margin-bottom: 28px;
-}
-.coctails-card__description {
-  color: var(--primary-text-color);
-  margin-bottom: 28px;
-}
-.buttons {
+.button__container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  @include tablet {
+    gap: 12px;
+  }
+  @include desktop {
+    gap: 16px;
+  }
 }
-.button__more {
-  border-radius: 4px;
-  background-color: var(--btn-color);
-  padding: 12px 28px;
-  margin-right: 16px;
-}
-.button__remove {
-  border-radius: 4px;
 
-  padding: 12px 28px;
-}
-.coctails__image {
-  width: 100%;
+.icon {
+  fill: #fcfcfc;
 }
