@@ -1,4 +1,5 @@
 import fetchData from './js/fetch';
+import './js/modal-cocktails';
 
 // For testing fetch function (it's object with fetch methods on it)
 fetchData.fetchCocktailByName('margarita').then(res => console.log(res));
