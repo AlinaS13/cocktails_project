@@ -1,0 +1,107 @@
+<header class="header">
+    <div class="container header__container">
+      <!-- *                             logo                                    -->
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./img/logo.png" alt="logo">
+        </a>
+      </div>
+  
+      <!-- *                             nav                                     -->
+      <nav class="nav">
+          <a href="./index.html">Home</a>
+          <div class="dropdown">
+            <button class="dropbtn">Favorite</button>
+            <div class="dropdown-content">
+              <a href="#">Favorite cocktails</a>
+              <a href="#">Favorite ingredients</a>
+            </div>
+          </div>
+      </nav>
+      
+  
+      <!-- *                             search                                  -->
+      <form class="search">
+          <button type="submit">
+            <svg fill="#fd5103" width="24" height="24">
+              <use href="./img/symbol-defs.svg#icon-magnifier"></use>
+            </svg>
+          </button>
+  
+          <input type="text" autocomplete="off" id="coctail-search" name="search" class="search__input" placeholder="Search |">
+      </form>
+
+      <!-- *                             menu btn                                -->
+      <div class="menu__btn">
+        <button type="button" data-modal-open>
+          <svg width="30" height="30">
+            <use href="./img/symbol-defs.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
+  
+      <!-- *                             burger menu                             -->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal container">
+          <div class="container__left">
+          
+
+            <div class="logo burger__logo">
+              <a href="./index.html">
+                <img src="./img/logo.png" alt="logo">
+              </a>
+            </div>
+  
+            <div class="switcher__mob">
+              <span class="switcher__light">Light</span>
+              <label class="switcher__label">
+                <input class="switcher__input" type="checkbox" />
+                <span class="switcher__switch"></span>
+              </label>
+              <span class="switcher__dark">Dark</span>
+            </div>
+
+            <button class="modal__close" data-modal-close>
+            <svg class="modal__close--icon" width="30" height="30">
+              <use href="./img/symbol-defs.svg#icon-menu-close"></use>
+            </svg>
+            </button>
+          </div class="container__left">
+
+          <form class="burger__search">
+            <button type="submit">
+              <svg fill="#fd5103" width="24" height="24">
+                <use href="./img/symbol-defs.svg#icon-magnifier"></use>
+              </svg>
+            </button>
+    
+            <input type="text" autocomplete="off" id="coctail-search" name="search" class="search__input" placeholder="Search |">
+          </form>
+          <nav class="burger__nav">
+            <a href="./index.html">Home</a>
+            <div class="dropdown burger__nav--btn">
+              <button class="dropbtn">Favorite
+                <svg width="24" height="24">
+                  <use href="./img/symbol-defs.svg#icon-arrow"></use>
+                </svg>
+              </button>
+              <div class="dropdown-content dropdown-content__burger">
+                <a href="#">Favorite cocktails</a>
+                <a href="#">Favorite ingredients</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- *                             switch                                  -->
+      <div class="switcher">
+        <span class="switcher__light">Light</span>
+        <label class="switcher__label">
+          <input class="switcher__input" type="checkbox" />
+          <span class="switcher__switch"></span>
+        </label>
+        <span class="switcher__dark">Dark</span>
+      </div>
+    </div>
+  </header>
