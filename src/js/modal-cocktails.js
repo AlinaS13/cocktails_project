@@ -1,11 +1,10 @@
 import fetch from "./fetch";
-import '../sass/main.scss'
 
 const fetchCocktailDetailsById = fetch.fetchCocktailDetailsById;
 
 const constants = {
-    GALLERY_CONTAINER_SELECTOR: '.gallery', ///TODO: проверить класс контейнера коктейлей
-    LEARN_MORE_BUTTON_SELECTOR: '.learn-more-button',
+    GALLERY_CONTAINER_SELECTOR: '.gallery__list', ///TODO: проверить класс контейнера коктейлей
+    LEARN_MORE_BUTTON_SELECTOR: '.button-more',
 };
 
 
@@ -31,7 +30,9 @@ function onGalleryClick(e) {
         return;
     }
 
-    let cocktailPromise = fetchCocktailDetailsById(11003);
+    let drinkId = e.target.dataset.idDrink;
+
+    let cocktailPromise = fetchCocktailDetailsById(drinkId);
     cocktailPromise.then(function (cocktailInfo) {
         console.log(cocktailInfo)
         refs.modalInnerContainer.innerHTML = createCoctailInfoMarkup(cocktailInfo.drinks[0]);
@@ -51,37 +52,28 @@ function createCoctailInfoMarkup({ strDrink, strInstructions, strDrinkThumb, ...
     console.log(ingredients)
     return `
     <h1 class="modal-cocktail-name">${strDrink}</h1>
-    <h2 class="modal-cocktail-instructions">Instructions:</h2>
-    <p class="modal-cocktail-instructions-text">
-                ${strInstructions}
-            </p>
+    <div class="modal-cocktail-instructions">
+        <h2 class="modal-cocktail-instructions-title">Instructions:</h2>
+        <p class="modal-cocktail-instructions-text">
+            ${strInstructions}
+        </p>
+    </div>
     <img src="${strDrinkThumb}" alt="" class="modal-cocktail-picture">
-    <h2 class="modal-cocktail-ingredients">INGREDIENTS</h2>
-    <h3 class="modal-per-cocktail">Per cocktail</h3>
-    <ul class="modal-cocktail-ingredients-list">
+    <div class="modal-cocktail-ingredients">
+        <h2 class="modal-cocktail-ingredients-title">INGREDIENTS</h2>
+        <h3 class="modal-per-cocktail">Per cocktail</h3>
+        <ul class="modal-cocktail-ingredients-list">
             ${ingredients.map(function (ingredient) {
-                return  `<li>
+                return  `
+                <li>
                     <a href="">✶ ${ingredient}</a>
                 </li>`
             }).join('')}
-            </ul>`
+        </ul>
+    </div>`
 }
 
-// {/* <img src="${strDrinkThumb}" alt="" class="modal-cocktail-picture">
-//             <h1 class="modal-cocktail-name">${strDrink}</h1>
-//             <h2 class="modal-cocktail-ingredients">INGREDIENTS</h2>
-//             <h3 class="modal-per-cocktail">Per cocktail</h3>
-//             <ul class="modal-cocktail-ingredients-list">
-//             ${ingredients.map(function (ingredient) {
-//                 return  `<li>
-//                     <a href="">✶ ${ingredient}</a>
-//                 </li>`
-//             }).join('')}
-//             </ul>
-//             <h2 class="modal-cocktail-instructions">Instructions:</h2>
-//             <p class="modal-cocktail-instructions-text">
-//                 ${strInstructions}
-//             </p> */}
+
 
 
 

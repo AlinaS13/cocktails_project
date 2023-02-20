@@ -21,6 +21,17 @@
     }
 }
 
+.cocktail-info-modal-contents {
+    @include tablet {
+        align-self: stretch;
+        row-gap: 28px;
+        column-gap: 32px;
+        display: grid;
+        grid-template-columns: 288px auto;
+        grid-template-rows: auto auto;
+    }
+}
+
 .coctail-info-modal {
     position: fixed;
     top: 0;
@@ -38,11 +49,18 @@
     &__container {
         background-color: var(--light-bg-color);
         width: 320px;
-        
+        padding: 40px 25px 20px;
         position: relative;
 
         @include tablet{
             width: 822px;
+            padding-right: 28px;
+            padding-top: 0;
+            padding-left: 0;
+            padding-bottom: 28px;
+            align-items: flex-end;
+            flex-direction: column;
+            display: flex;
             
         }
     }
@@ -58,73 +76,86 @@ button.coctail-info-modal-close {
     background-repeat: no-repeat;
     background-color: white;
     border: 0;
-    background-image: url(../img/close-modal.svg);
     width: 17px;
     height: 17px;
-    top: 10px;
-    right: 10px;
+    top: 23px;
+    right: 23px;
     position: absolute;
+}
+.icon-cocktail-modal {
+    fill: var(--dark-bg-color);
+}
+
+.modal-cocktail-ingredients {
+    @include tablet {
+        grid-row-start: 2;
+
+    }
 }
 
 .modal-cocktail-name{
-    position: absolute;
-    width: 129px;
-    height: 37px;
-    margin-left: 20px;
-    margin-top: 40px;
+    margin-bottom: 20px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 32px;
     line-height: 1.18;
     color: var(--dark-text-color);
+    @include tablet {
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
 }
 
 .modal-cocktail-instructions {
-    position: absolute;
-    width: 122px;
-    height: 26px;
-    margin-left: 20px;
-    margin-top: 20px;
-    font-family: 'Poppins';
+    @include tablet {
+       margin-left: 28px;
+    }
+}
+
+.modal-cocktail-instructions-title {
+    margin-bottom: 20px;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.62;
     text-transform: uppercase;
     color: var(--dark-text-color);
+    @include tablet {
+        margin-bottom: 24px;
+    }
 }
 
 .modal-cocktail-instructions-text {
-    position: absolute;
-    width: 275px;
-    height: 168px;
-    margin-left: 20px;
-    margin-top: 20px;
-    font-family: 'Poppins';
+    margin-bottom: 32px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.75;
     color: #5F6775;
+    @include tablet{
+        width: 615px;
+    }
 }
 
-// .modal-cocktail-picture {
-//     position: absolute;
-//     width: 280px;
-//     height: 280px;
-//     margin-left: 20px;
-//     margin-top: 32px;
-//     border-radius: 4px;
-// }
+.modal-cocktail-picture {
+    width: 280px;
+    height: 280px;
+    margin-bottom: 22px;
+    border-radius: 4px;
 
-.modal-cocktail-ingredients {
-    position: absolute;
-    width: 103px;
-    height: 24px;
-    margin-left: 20px;
-    margin-top: 22px;
-    font-family: 'Poppins';
+    @include tablet {
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        margin-bottom: 0;
+        width: 288px;
+        height: 320px;
+    }
+}
+
+.modal-cocktail-ingredients-title {
+    margin-bottom: 8px;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -133,12 +164,7 @@ button.coctail-info-modal-close {
 }
 
 .modal-per-cocktail {
-    position: absolute;
-    width: 80px;
-    height: 21px;
-    margin-left: 20px;
-    margin-top: 8px;
-    font-family: 'Poppins';
+    margin-bottom: 8px;
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
@@ -147,12 +173,7 @@ button.coctail-info-modal-close {
 }
 
 .modal-cocktail-ingredients-list {
-    position: absolute;
-    width: 215px;
-    height: 130px;
-    margin-left: 15px;
-    margin-top: 8px;
-    font-family: 'Poppins';
+    margin-bottom: 32px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -161,7 +182,6 @@ button.coctail-info-modal-close {
 }
 
 .button-more.modal-add {
-    margin-left: 20px;
-    margin-top: 32px;
+    
 }
 
