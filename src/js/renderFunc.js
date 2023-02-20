@@ -30,7 +30,7 @@ function createMarkup(arr) {
                 <h5 class="gallery__title">${strDrink}</h5>
                 <div class="button__container">
                   <button class="button-more" type="button" data-id-drink="${idDrink}">Learn more</button>
-                  <button class="button-add" type="button">Add to &nbsp<svg class="icon" width="21" height="19">
+                  <button class="button-add" type="button" id=${idDrink}>Add to &nbsp<svg class="icon" width="21" height="19">
                   <use href="${svgLink}#icon-heart-empty"></use>
                   </svg></button>
                 </div>
@@ -53,14 +53,12 @@ const renderCoctails = () => {
   // createMarkupPagination(response.drinks);
   let result = [];
   paginationOnOf(drinks);
-  currentPage = pageNumber - 1
+  currentPage = pageNumber - 1;
   const start = itemsPerPage * currentPage;
   const end = start + itemsPerPage;
-  result = drinks?.length
-    ? drinks.slice(start, end)
-    : [];
+  result = drinks?.length ? drinks.slice(start, end) : [];
   // console.log(result)
-  clearGallery()
+  clearGallery();
   const elems = createMarkup(result);
   if (elems) {
     gallery.insertAdjacentHTML('afterbegin', elems);
@@ -71,31 +69,31 @@ const renderCoctails = () => {
 const fetchCoctails = async (fn, query) => {
   const response = await fn(query);
   drinks = response.drinks;
-  renderCoctails()
-}
- function paginationOnOf(response) {
+  renderCoctails();
+};
+function paginationOnOf(response) {
   // Функція відображення блоку пагінації
   if (response?.length <= itemsPerPage) {
     // все влазить на сторінку, відключаємо відображення пагінації
     paginationBlock.classList.add('is-none');
     return;
   }
-  
+
   paginationBlock.classList.remove('is-none');
   createMarkupPagination(response);
 
   // return ultraCurrenPage
 }
- function createMarkupPagination(response) {
+function createMarkupPagination(response) {
   // створює розмітку пагінації
   // розраховуемо кількість сторінок
-  
-  let lengthResponce = response?.length
+
+  let lengthResponce = response?.length;
   let pageCount = Math.ceil(lengthResponce / itemsPerPage);
   let markUpString = '';
-  
+
   for (let i = 1; i <= pageCount; i++) {
-    const pageToRender = currentPage * itemsPerPage
+    const pageToRender = currentPage * itemsPerPage;
     markUpString += `<li class="pagination-item">
     <button type="button" data-page='${i}' class="pagination-button">${i}</button>
   </li>`;
@@ -104,15 +102,15 @@ const fetchCoctails = async (fn, query) => {
   paginationList.innerHTML = markUpString;
 
   const buttonArray = document.querySelectorAll('.pagination-item');
-  buttonArray.forEach((btn) => {
-    btn.addEventListener('click', onClick)
-  })
+  buttonArray.forEach(btn => {
+    btn.addEventListener('click', onClick);
+  });
 }
-  function onClick(e) {
-      pageNumber = +e.target.dataset.page
-      renderCoctails()
-      // console.log(pageNumber)
-    }
+function onClick(e) {
+  pageNumber = +e.target.dataset.page;
+  renderCoctails();
+  // console.log(pageNumber)
+}
 //export of all functions as an object
 export default {
   fetchCoctails,
@@ -120,6 +118,5 @@ export default {
   clearGallery,
   resolutionQuery,
   itemsPerPage,
+  createMarkup,
 };
-
-

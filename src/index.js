@@ -17,7 +17,7 @@ import heroLetter from './js/hero';
 // import renderFavoriteCoctails from './js/localStoregeCoctais';
 
 import drinks from './js/ingredients.json';
-console.log(drinks);
+// console.log(drinks);
 import { keys } from './js/localStoregeKeys';
 console.log(keys.localCoctailsKey);
 
