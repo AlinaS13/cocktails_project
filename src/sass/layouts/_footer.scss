@@ -2,13 +2,4 @@
   background-color: var(--brend-color);
   height: 110px;
   margin-top: 60px;
-  @include mobile {
-    width: 100vw;
-  }
-  @include tablet {
-    width: 100vw;
-  }
-  @include desktop {
-    width: 100vw;
-  }
 }
