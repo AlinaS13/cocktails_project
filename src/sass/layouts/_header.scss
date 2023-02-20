@@ -13,11 +13,6 @@
     }
   }
   
-  //*                  logo
-  // .logo {
-  // }
-  
-  
   //*                  nav
   .nav{
     margin-left: 43px;
@@ -68,8 +63,10 @@
     min-width: 210px;
     height: 96px;
     z-index: 1;
-    border: 1px solid var(--brend-color);
+    border: 1px solid var(--search-border);
+    border-top: 0;
     border-radius: 4px;
+    overflow: hidden;
   }
   
   /* Ссылки внутри выпадающего списка */
@@ -83,9 +80,10 @@
     font-size: 18px;
     line-height: 24px;
     letter-spacing: 0.02em;
-    color: #000000;
+    color: var(--search-list);
     display: block;
     height: 48px;
+    border-top: 1px solid var(--search-border);
     // background-color: var(--light-bg-color);
   }
   
@@ -132,6 +130,7 @@
     border-bottom: 1px solid var(--brend-color);
   }
   .search__input {
+    background-color: transparent;
     border-top: 1px solid var(--brend-color);
     border-bottom: 1px solid var(--brend-color);
     border-left: 1px solid var(--brend-color);
@@ -345,7 +344,7 @@
       box-sizing: border-box;
       width: 40px;
       height: 20px;
-      border: 1px solid var(--brend-color);
+      border: 1px solid var(--switch-bg);
       border-radius: 25%/50%;
       vertical-align: top;
       background: var(--light-text-color);
@@ -357,7 +356,7 @@
         width: 18px;
         height: 18px;
         border-radius: 50%;
-        background: var(--brend-color);
+        background: var(--switch-bg);
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
         transition: 0.15s;
       }
@@ -372,12 +371,12 @@
       opacity: 0;
   
       &:checked+.switcher__switch {
-        border-color: var(--light-text-color);
+        border-color: var(--switch-bg);
         background: var(--brend-color);
       }
   
       &:checked+.switcher__switch:before {
-        background-color: var(--light-text-color);
+        background-color: var(--switch-color);
         transform: translateX(20px);
       }
   
@@ -508,12 +507,12 @@
         opacity: 0;
   
         &:checked+.switcher__switch {
-          border-color: var(--light-text-color);
+          border-color: var(--switch-bg);
           background: var(--brend-color);
         }
   
         &:checked+.switcher__switch:before {
-          background-color: var(--light-text-color);
+          background-color: var(--switch-color);
           transform: translateX(20px);
         }
   
@@ -522,4 +521,11 @@
         }
       }
     }
+  }
+
+  .switcher__light{
+    color: var(--checkbox-color-light);
+  }
+  .switcher__dark{
+    color: var(--checkbox-color-dark);
   }
