@@ -23,13 +23,13 @@ let pageNumber = 1;
 function createMarkup(arr) {
   // console.log(arr)
   let markup = arr.map(
-    ({ strDrinkThumb, strDrink }) => `
+    ({ strDrinkThumb, strDrink, idDrink }) => `
         <li class="gallery__card ">
             <img src='${strDrinkThumb}' alt='${strDrink}' class="gallery__photo" loading='lazy'/>
              <div class="gallery__info">
                 <h5 class="gallery__title">${strDrink}</h5>
                 <div class="button__container">
-                  <button class="button-more" type="button">Learn more</button>
+                  <button class="button-more" type="button" data-id-drink="${idDrink}">Learn more</button>
                   <button class="button-add" type="button">Add to <svg class="icon" width="21" height="19">
                   <use href="${svgLink}#icon-heart-empty"></use>
                   </svg></button>
