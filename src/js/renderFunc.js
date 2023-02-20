@@ -30,7 +30,7 @@ function createMarkup(arr) {
                 <h5 class="gallery__title">${strDrink}</h5>
                 <div class="button__container">
                   <button class="button-more" type="button" data-id-drink="${idDrink}">Learn more</button>
-                  <button class="button-add" type="button">Add to <svg class="icon" width="21" height="19">
+                  <button class="button-add" type="button">Add to &nbsp<svg class="icon" width="21" height="19">
                   <use href="${svgLink}#icon-heart-empty"></use>
                   </svg></button>
                 </div>
@@ -56,7 +56,7 @@ const renderCoctails = () => {
   currentPage = pageNumber - 1
   const start = itemsPerPage * currentPage;
   const end = start + itemsPerPage;
-  result = drinks.length
+  result = drinks?.length
     ? drinks.slice(start, end)
     : [];
   // console.log(result)
@@ -75,7 +75,7 @@ const fetchCoctails = async (fn, query) => {
 }
  function paginationOnOf(response) {
   // Функція відображення блоку пагінації
-  if (response.length <= itemsPerPage) {
+  if (response?.length <= itemsPerPage) {
     // все влазить на сторінку, відключаємо відображення пагінації
     paginationBlock.classList.add('is-none');
     return;
@@ -90,7 +90,7 @@ const fetchCoctails = async (fn, query) => {
   // створює розмітку пагінації
   // розраховуемо кількість сторінок
   
-  let lengthResponce = response.length
+  let lengthResponce = response?.length
   let pageCount = Math.ceil(lengthResponce / itemsPerPage);
   let markUpString = '';
   
@@ -111,7 +111,7 @@ const fetchCoctails = async (fn, query) => {
   function onClick(e) {
       pageNumber = +e.target.dataset.page
       renderCoctails()
-      console.log(pageNumber)
+      // console.log(pageNumber)
     }
 //export of all functions as an object
 export default {
