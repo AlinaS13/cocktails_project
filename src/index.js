@@ -2,7 +2,7 @@ import fetchData from './js/fetch';
 
 import './js/modal-cocktails';
 import renderFunc from './js/renderFunc';
-import gallery from './js/gallery';
+import './js/gallery';
 
 import heroLetter from './js/hero';
 

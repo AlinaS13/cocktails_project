@@ -13,5 +13,4 @@ renderFunc.clearGallery();
 //   renderFunc.fetchCoctails(fetchData.fetchCocktailByLetter, 'a');
 // }
 
-    renderFunc.fetchCoctails(fetchData.fetchRandomCocktail);
-
+renderFunc.fetchCoctails(fetchData.fetchRandomCocktail);
