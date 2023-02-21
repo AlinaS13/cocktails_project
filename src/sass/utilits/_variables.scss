@@ -1,4 +1,4 @@
-:root {
+:root{
   --brend-color: #fd5103;
   --light-text-color: #fcfcfc;
   --dark-text-color: #202025;
@@ -6,4 +6,29 @@
   --dark-bg-color: #202025;
   --primary-text-color: #5f6775;
   --btn-color: #fe7031;
+
+  --switch-bg: #fd5103;
+  --switch-color: #fd5103;
+
+  --search-list: #202025;
+  --search-border: #fd5103;
+
+  --checkbox-color-light: #fd5103;
+  --checkbox-color-dark: #202025;
+}
+
+[data-theme='dark'] {
+  --light-text-color: #202025;
+  --dark-text-color: #fcfcfc;
+  --light-bg-color: #202025;
+  --dark-bg-color: #fcfcfc;
+
+  --switch-bg: #fcfcfc;
+  --switch-color: #fcfcfc;
+
+  --search-list: #fcfcfc;
+  --search-border: #fcfcfc;
+
+  --checkbox-color-light: #fcfcfc;
+  --checkbox-color-dark: #fd5103;
 }

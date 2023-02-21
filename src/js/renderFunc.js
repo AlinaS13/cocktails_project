@@ -49,7 +49,7 @@ function createMarkup(arr) {
                 <h5 class="gallery__title">${strDrink}</h5>
                 <div class="button__container">
                   <button class="button-more" type="button" data-id-drink="${idDrink}">Learn more</button>
-                  <button class="button-add" type="button">Add to &nbsp<svg class="icon" width="21" height="19">
+                  <button class="button-add" type="button" id=${idDrink}>Add to &nbsp<svg class="icon" width="21" height="19">
                   <use href="${svgLink}#icon-heart-empty"></use>
                   </svg></button>
                 </div>
@@ -139,4 +139,5 @@ export default {
   clearGallery,
   resolutionQuery,
   itemsPerPage,
+  createMarkup,
 };
