@@ -19,9 +19,9 @@ const resolutionQuery = {
 function checkClientViewPort() {
   let key = null;
   let clientViewportWidth = window.innerWidth;
-  if (clientViewportWidth >= 768 && clientViewportWidth < 1200) {
+  if (clientViewportWidth >= 768 && clientViewportWidth < 1280) {
     key = resolutionQuery[1];
-  } else if (clientViewportWidth >= 1200) {
+  } else if (clientViewportWidth >= 1280) {
     key = resolutionQuery[2];
   } else {
     key = resolutionQuery[0];
@@ -104,7 +104,9 @@ function paginationOnOf(response) {
 
   paginationBlock.classList.remove('is-none');
   createMarkupPagination(response);
-  paginationList.childNodes[0].firstElementChild.classList.add('pagination-button--select')
+  paginationList.childNodes[0].firstElementChild.classList.add(
+    'pagination-button--select'
+  );
 }
 function createMarkupPagination(response) {
   // створює розмітку пагінації
@@ -131,9 +133,12 @@ function createMarkupPagination(response) {
 function onClick(e) {
   pageNumber = +e.target.dataset.page;
   renderCoctails();
-  paginationList.childNodes[0].firstElementChild.classList.remove('pagination-button--select')
-  paginationList.childNodes[currentPage].firstElementChild.classList.add('pagination-button--select')
-
+  paginationList.childNodes[0].firstElementChild.classList.remove(
+    'pagination-button--select'
+  );
+  paginationList.childNodes[currentPage].firstElementChild.classList.add(
+    'pagination-button--select'
+  );
 }
 //export of all functions as an object
 export default {
