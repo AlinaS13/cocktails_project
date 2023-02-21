@@ -20,17 +20,19 @@ function checkClientViewPort() {
   let key = null;
   let clientViewportWidth = window.innerWidth;
   if (clientViewportWidth >= 768 && clientViewportWidth < 1200) {
-    key = 1;
+    key = resolutionQuery[1];
   } else if (clientViewportWidth >= 1200) {
-    key = 2;
+    key = resolutionQuery[2];
   } else {
-    key = 0;
+    key = resolutionQuery[0];
   }
   return key;
 }
 
-const objKey = checkClientViewPort();
-const itemsPerPage = resolutionQuery[objKey];
+// const objKey = checkClientViewPort();
+
+const itemsPerPage = checkClientViewPort();
+console.log(itemsPerPage);
 
 const paginationBlock = document.querySelector('.pagination-box');
 const paginationList = document.querySelector('.pagination-list');
