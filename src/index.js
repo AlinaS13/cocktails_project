@@ -2,8 +2,8 @@ import fetchData from './js/fetch';
 
 import './js/modal-cocktails';
 import renderFunc from './js/renderFunc';
-import gallery from './js/gallery';
-import './js/search'
+import './js/gallery';
+import './js/search';
 import heroLetter from './js/hero';
 
 // For testing fetch function (it's object with fetch methods on it)
@@ -31,4 +31,4 @@ function setLS() {
 
 import './js/modal';
 
-import './js/switch'
+import './js/switch';

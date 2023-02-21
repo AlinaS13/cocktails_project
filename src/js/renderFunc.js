@@ -4,15 +4,35 @@ const svgLink = require('../img/icons.svg');
 const gallery = document.querySelector('.gallery__list');
 
 let drinks = [];
-// object of pagameters to get amount of images to render
+// object of pagameters to get amount of images to render depending of client viewport height
 const resolutionQuery = {
   0: 3,
   1: 6,
   2: 9,
 };
 // variables
-const key = Math.floor(window.innerWidth / 600);
-const itemsPerPage = resolutionQuery[key];
+
+// let key = Math.floor(window.innerWidth / 600);
+
+// check client viewport height and set key we need
+// to apply to choose correct ammount of images to render
+function checkClientViewPort() {
+  let key = null;
+  let clientViewportWidth = window.innerWidth;
+  if (clientViewportWidth >= 768 && clientViewportWidth < 1280) {
+    key = resolutionQuery[1];
+  } else if (clientViewportWidth >= 1280) {
+    key = resolutionQuery[2];
+  } else {
+    key = resolutionQuery[0];
+  }
+  return key;
+}
+
+// const objKey = checkClientViewPort();
+
+const itemsPerPage = checkClientViewPort();
+console.log(itemsPerPage);
 
 const paginationBlock = document.querySelector('.pagination-box');
 const paginationList = document.querySelector('.pagination-list');
@@ -24,7 +44,8 @@ function createMarkup(arr) {
   // console.log(arr)
   let markup = arr.map(
     ({ strDrinkThumb, strDrink, idDrink }) => `
-        <li class="gallery__card ">
+        <li class="gallery__card">
+            <a class="gallery__link">
             <img src='${strDrinkThumb}' alt='${strDrink}' class="gallery__photo" loading='lazy'/>
              <div class="gallery__info">
                 <h5 class="gallery__title">${strDrink}</h5>
@@ -35,6 +56,7 @@ function createMarkup(arr) {
                   </svg></button>
                 </div>
              </div>
+            </a>
             </li>
       `
   );
@@ -52,6 +74,7 @@ let currentPage = 0;
 const renderCoctails = () => {
   // createMarkupPagination(response.drinks);
   let result = [];
+  // console.log(itemsPerPage);
   paginationOnOf(drinks);
   currentPage = pageNumber - 1;
   const start = itemsPerPage * currentPage;
@@ -81,7 +104,9 @@ function paginationOnOf(response) {
 
   paginationBlock.classList.remove('is-none');
   createMarkupPagination(response);
-  paginationList.childNodes[0].firstElementChild.classList.add('pagination-button--select')
+  paginationList.childNodes[0].firstElementChild.classList.add(
+    'pagination-button--select'
+  );
 }
 function createMarkupPagination(response) {
   // створює розмітку пагінації
@@ -108,9 +133,12 @@ function createMarkupPagination(response) {
 function onClick(e) {
   pageNumber = +e.target.dataset.page;
   renderCoctails();
-  paginationList.childNodes[0].firstElementChild.classList.remove('pagination-button--select')
-  paginationList.childNodes[currentPage].firstElementChild.classList.add('pagination-button--select')
-
+  paginationList.childNodes[0].firstElementChild.classList.remove(
+    'pagination-button--select'
+  );
+  paginationList.childNodes[currentPage].firstElementChild.classList.add(
+    'pagination-button--select'
+  );
 }
 //export of all functions as an object
 export default {

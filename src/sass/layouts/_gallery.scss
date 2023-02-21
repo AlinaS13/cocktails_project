@@ -5,7 +5,7 @@
 .gallery__headling {
   font-family: 'Poppins', sans-serif;
   @include font(600, 22px, 42px, 1.5);
-
+  color: var(--dark-text-color);
   @include tablet {
     @include font(600, 32px, 42px, 1.5);
   }
@@ -23,7 +23,7 @@
     margin-bottom: 24px;
     justify-content: center;
     align-items: center;
-    width: 280px;
+    // width: 280px;
     @include tablet {
         display: grid;
         grid-template-columns: repeat(2, 335px);
@@ -39,8 +39,18 @@
     
 }
 
+.gallery__link {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+ }
+
 .gallery__card {
     height: 449px;
+    flex-grow: 1;
+    flex-shrink: 1;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -52,9 +62,11 @@
     }
 
     @include desktop {
-        height: 556px;
+        height: 580px;
     }
 }
+
+
 
 .gallery__card img {
   display: block;
@@ -62,12 +74,13 @@
 }
 
 .gallery__info {
-    min-width: 280px;
+    // min-width: 280px;
     // min-height: 169px;
     height: 100%;
     // align-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 27px;
+    // flex-shrink: 1;
+    // margin-top: 20px;
+    // margin-bottom: 27px;
     text-align: center;
     @include tablet {
     height: 160px;
@@ -88,10 +101,10 @@
 .gallery__title {
   display: block;
   margin-top: 48px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-family: 'Roboto', sans-serif;
   @include font(900, 26px, 42px, 1.5);
-
+  color: var(--dark-text-color);
     @include tablet {
         margin-top: 20px;
         margin-bottom: 25px;
@@ -101,7 +114,7 @@
         margin-bottom: 27px;
         margin-top: 0px;
 
-        @include font(900, 32px, 38px, 1.5)
+        @include font(900, 29px, 38px, 1.5)
     }
 
 }
@@ -119,6 +132,6 @@
   }
 }
 
-.icon {
-  fill: #fcfcfc;
-}
+// .icon {
+//   fill: var(--light-bg-color);
+// }
