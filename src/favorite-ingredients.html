@@ -23,28 +23,32 @@
   </head>
 
   <body>
-    <include src="./partials/header.html"></include>
-    <include src="./partials/burger-menu.html"></include>
+    <div class="page-container">
+      <div class="content-wrap">
+        <include src="./partials/header.html"></include>
+        <include src="./partials/burger-menu.html"></include>
 
-    <div class="container">
-      <section class="intgredients-section">
-        <h2 class="ingredients__title">Favorite ingredients</h2>
-        <ul class="ingredients-list">
-          <li class="ingredient__card">
-            <h3 class="ingredient-card__title">Compari</h3>
-            <p class="ingredient-card__description">Lequer</p>
-            <div class="button__container">
-              <button type="button" class="button-more">Learn more</button>
-              <button type="button" class="button-add">Remove</button>
-            </div>
-          </li>
-        </ul>
-      </section>
+        <div class="container">
+          <section class="intgredients-section">
+            <h2 class="ingredients__title">Favorite ingredients</h2>
+            <ul class="ingredients-list">
+              <li class="ingredient__card">
+                <h3 class="ingredient-card__title">Compari</h3>
+                <p class="ingredient-card__description">Lequer</p>
+                <div class="button__container">
+                  <button type="button" class="button-more">Learn more</button>
+                  <button type="button" class="button-add">Remove</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <include src="./partials/modal-cocktails.html"></include>
+        <include src="./partials/modal-ingredients.html"></include>
+      </div>
+      <include src="./partials/footer.html"></include>
     </div>
-
-    <include src="./partials/modal-cocktails.html"></include>
-    <include src="./partials/modal-ingredients.html"></include>
-    <include src="./partials/footer.html"></include>
     <script src="./index.js" type="module"></script>
   </body>
 </html>
