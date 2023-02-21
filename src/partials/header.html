@@ -1,113 +1,113 @@
 <header class="header">
-    <div class="container header__container">
-      <!-- *                             logo                                    -->
-      <div class="logo">
-        <a href="./index.html">
-          <img src="./img/logo.svg" alt="logo" class="logo-img" />
-        </a>
-      </div>
-  
-      <!-- *                             nav                                     -->
-      <nav class="nav">
-          <a href="./index.html">Home</a>
-          <div class="dropdown">
-            <button class="dropbtn">Favorite</button>
-            <div class="dropdown-content">
-              <a href="./favorite-cocktails.html">Favorite cocktails</a>
-              <a href="./favorite-ingredients.html">Favorite ingredients</a>
-            </div>
+  <div class="container header__container">
+    <!-- *                             logo                                    -->
+    <div class="logo">
+      <a href="./index.html">
+        <img src="./img/logo.svg" alt="logo" class="logo-img" />
+      </a>
+    </div>
+
+    <!-- *                             nav                                     -->
+    <nav class="nav">
+        <a href="./index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Favorite</button>
+          <div class="dropdown-content">
+            <a href="./favorite-cocktails.html">Favorite cocktails</a>
+            <a href="./favorite-ingredients.html">Favorite ingredients</a>
           </div>
-      </nav>
-      
+        </div>
+    </nav>
+    
+
+    <!-- *                             search                                  -->
+    <form class="search">
+        <button type="submit">
+          <svg fill="#fd5103" width="24" height="24">
+            <use href="./img/symbol-defs.svg#icon-magnifier"></use>
+          </svg>
+        </button>
+
+        <input type="text" autocomplete="off" id="coctail-search" name="search" class="search__input" placeholder="Search |">
+    </form>
+
+    <!-- *                             switch                                  -->
+    <div class="switcher">
+      <span class="switcher__light">Light</span>
+      <label class="switcher__label">
+        <input class="switcher__input" type="checkbox" id="toggle-theme" value="Toggle"/>
+        <span class="switcher__switch switch__light"></span>
+      </label>
+      <span class="switcher__dark switch__dark">Dark</span>
+    </div>
+
+    <!-- *                             menu btn                                -->
+    <div class="menu__btn">
+      <button type="button" data-modal-open>
+        <svg class="icon__menu--burger" width="30" height="30">
+          <use href="./img/symbol-defs.svg#icon-menu"></use>
+        </svg>
+      </button>
+    </div>
+
+    <!-- *                             burger menu                             -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal container">
+        <div class="container__left">
+         <div class="container__left">
+            <div class="switch__container">
+              <div class="logo burger__logo">
+            <a href="./index.html">
+              <img src="./img/logo.svg" alt="logo" class="logo-img" />
+            </a>
+              </div>
+
+              <div class="switcher__mob">
+            <span class="switcher__light">Light</span>
+            <label class="switcher__label">
+              <input class="switcher__input" id="toggle-burger"  type="checkbox" value="Toggle"/>
+              <span class="switcher__switch switch__light"></span>
+            </label>
+            <span class="switcher__dark switch__dark">Dark</span>
+              </div>
   
-      <!-- *                             search                                  -->
-      <form class="search">
+              <button class="modal__close" data-modal-close>
+              <svg class="modal__close--icon" width="30" height="30">
+                <use href="./img/symbol-defs.svg#icon-menu-close"></use>
+              </svg>
+              </button>
+            </div>
+         </div>
+
+        <div class="container__right">
+        <form class="burger__search search">
           <button type="submit">
             <svg fill="#fd5103" width="24" height="24">
               <use href="./img/symbol-defs.svg#icon-magnifier"></use>
             </svg>
           </button>
   
-          <input type="text" autocomplete="off" id="coctail-search" name="search" class="search__input" placeholder="Search |">
-      </form>
+          <input type="text" autocomplete="off" name="search" class="search__input" placeholder="Search |">
+        </form>
 
-      <!-- *                             switch                                  -->
-      <div class="switcher">
-        <span class="switcher__light">Light</span>
-        <label class="switcher__label">
-          <input class="switcher__input" type="checkbox" id="toggle-theme" value="Toggle"/>
-          <span class="switcher__switch switch__light"></span>
-        </label>
-        <span class="switcher__dark switch__dark">Dark</span>
-      </div>
-
-      <!-- *                             menu btn                                -->
-      <div class="menu__btn">
-        <button type="button" data-modal-open>
-          <svg class="icon__menu--burger" width="30" height="30">
-            <use href="./img/symbol-defs.svg#icon-menu"></use>
-          </svg>
-        </button>
-      </div>
-  
-      <!-- *                             burger menu                             -->
-      <div class="backdrop is-hidden" data-modal>
-        <div class="modal container">
-          <div class="container__left">
-           <div class="container__left">
-              <div class="switch__container">
-                <div class="logo burger__logo">
-              <a href="./index.html">
-                <img src="./img/logo.svg" alt="logo" class="logo-img" />
-              </a>
-                </div>
-  
-                <div class="switcher__mob">
-              <span class="switcher__light">Light</span>
-              <label class="switcher__label">
-                <input class="switcher__input" id="toggle-burger"  type="checkbox" value="Toggle"/>
-                <span class="switcher__switch switch__light"></span>
-              </label>
-              <span class="switcher__dark switch__dark">Dark</span>
-                </div>
-    
-                <button class="modal__close" data-modal-close>
-                <svg class="modal__close--icon" width="30" height="30">
-                  <use href="./img/symbol-defs.svg#icon-menu-close"></use>
-                </svg>
-                </button>
-              </div>
-           </div>
-
-          <div>
-          <form class="burger__search">
-            <button type="submit">
-              <svg fill="#fd5103" width="24" height="24">
-                <use href="./img/symbol-defs.svg#icon-magnifier"></use>
+        <nav class="burger__nav">
+          <a href="./index.html">Home</a>
+          <div class="dropdown burger__nav--btn">
+            <button class="dropbtn">Favorite
+              <svg class="icon__arrow" width="24" height="24">
+                <use href="./img/symbol-defs.svg#icon-arrow"></use>
               </svg>
             </button>
-    
-            <input type="text" autocomplete="off" name="search" class="search__input" placeholder="Search |">
-          </form>
 
-          <nav class="burger__nav">
-            <a href="./index.html">Home</a>
-            <div class="dropdown burger__nav--btn">
-              <button class="dropbtn">Favorite
-                <svg class="icon__arrow" width="24" height="24">
-                  <use href="./img/symbol-defs.svg#icon-arrow"></use>
-                </svg>
-              </button>
-
-              <div class="dropdown-content dropdown-content__burger">
-                <a href="./favorite-cocktails.html">Favorite cocktails</a>
-                <a href="./favorite-ingredients.html">Favorite ingredients</a>
-              </div>
+            <div class="dropdown-content dropdown-content__burger">
+              <a href="./favorite-cocktails.html">Favorite cocktails</a>
+              <a href="./favorite-ingredients.html">Favorite ingredients</a>
             </div>
-          </nav>
           </div>
+        </nav>
+        </div>
 
-          </div>
         </div>
       </div>
+    </div>
 </header>
