@@ -104,8 +104,7 @@ function paginationOnOf(response) {
 
   paginationBlock.classList.remove('is-none');
   createMarkupPagination(response);
-
-  // return ultraCurrenPage
+  paginationList.childNodes[0].firstElementChild.classList.add('pagination-button--select')
 }
 function createMarkupPagination(response) {
   // створює розмітку пагінації
@@ -132,7 +131,9 @@ function createMarkupPagination(response) {
 function onClick(e) {
   pageNumber = +e.target.dataset.page;
   renderCoctails();
-  // console.log(pageNumber)
+  paginationList.childNodes[0].firstElementChild.classList.remove('pagination-button--select')
+  paginationList.childNodes[currentPage].firstElementChild.classList.add('pagination-button--select')
+
 }
 //export of all functions as an object
 export default {
