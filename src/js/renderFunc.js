@@ -106,7 +106,7 @@ const renderCoctails = () => {
 const fetchCoctails = async (fn, query) => {
   const response = await fn(query);
   drinks = response.drinks;
-  localStorage.setItem('fetchedObj', JSON.stringify(drinks));
+
   renderCoctails();
 };
 function paginationOnOf(response) {

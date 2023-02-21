@@ -1,6 +1,7 @@
 import fetchData from './js/fetch';
 
 import './js/modal-cocktails';
+import './js/modal-ingredients';
 import renderFunc from './js/renderFunc';
 import './js/gallery';
 import './js/search';
