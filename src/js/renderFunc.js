@@ -1,4 +1,14 @@
-//import fetchData from '../js/fetch';
+import { keys } from './localStoregeKeys';
+import { getSetLS } from './localStoregeaAddRemowe';
+
+// const onAddClick = e => {
+//   if (e.target.className !== 'button-add') {
+//     return;
+//   }
+//   e.target.textContent = 'Remove';
+//   getSetLS(Number(e.target.id));
+// };
+// gallery?.addEventListener('click', onAddClick);
 const svgLink = require('../img/icons.svg');
 
 const gallery = document.querySelector('.gallery__list');
@@ -38,9 +48,13 @@ const paginationBlock = document.querySelector('.pagination-box');
 const paginationList = document.querySelector('.pagination-list');
 
 let pageNumber = 1;
-
+const svg = ` &nbsp<svg class="icon" width="21" height="19">
+<use href="${svgLink}#icon-heart-empty"></use>
+</svg>`;
 // create markup function
 function createMarkup(arr) {
+  const a = localStorage.getItem(keys.localCoctailsKey);
+
   // console.log(arr)
   let markup = arr.map(
     ({ strDrinkThumb, strDrink, idDrink }) => `
@@ -51,9 +65,9 @@ function createMarkup(arr) {
                 <h5 class="gallery__title">${strDrink}</h5>
                 <div class="button__container">
                   <button class="button-more" type="button" data-id-drink="${idDrink}">Learn more</button>
-                  <button class="button-add" type="button" id=${idDrink}>Add to &nbsp<svg class="icon" width="21" height="19">
-                  <use href="${svgLink}#icon-heart-empty"></use>
-                  </svg></button>
+                  <button class="button-add" type="button" id=${idDrink}>${
+      a?.includes(idDrink) ? 'Remove ' : 'Add to ' + svg
+    }  </button>
                 </div>
              </div>
             </a>
@@ -141,6 +155,21 @@ function onClick(e) {
     'pagination-button--select'
   );
 }
+//localStorage
+
+import { getSetLS } from './localStoregeaAddRemowe';
+
+const onAddClick = e => {
+  const a = localStorage.getItem(keys.localCoctailsKey);
+  if (e.target.className !== 'button-add') {
+    return;
+  }
+  e.target.innerHTML = a?.includes(Number(e.target.id))
+    ? 'Add to ' + svg
+    : 'Remove';
+  getSetLS(Number(e.target.id));
+};
+gallery?.addEventListener('click', onAddClick);
 //export of all functions as an object
 export default {
   fetchCoctails,
