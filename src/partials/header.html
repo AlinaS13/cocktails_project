@@ -54,30 +54,32 @@
       <div class="backdrop is-hidden" data-modal>
         <div class="modal container">
           <div class="container__left">
-          
-
-            <div class="logo burger__logo">
+           <div class="container__left">
+              <div class="switch__container">
+                <div class="logo burger__logo">
               <a href="./index.html">
                 <img src="./img/logo.svg" alt="logo" class="logo-img" />
               </a>
-            </div>
+                </div>
   
-            <div class="switcher__mob">
+                <div class="switcher__mob">
               <span class="switcher__light">Light</span>
               <label class="switcher__label">
-                <input class="switcher__input" type="checkbox" />
-                <span class="switcher__switch"></span>
+                <input class="switcher__input" id="toggle-burger"  type="checkbox" value="Toggle"/>
+                <span class="switcher__switch switch__light"></span>
               </label>
-              <span class="switcher__dark">Dark</span>
-            </div>
+              <span class="switcher__dark switch__dark">Dark</span>
+                </div>
+    
+                <button class="modal__close" data-modal-close>
+                <svg class="modal__close--icon" width="30" height="30">
+                  <use href="./img/symbol-defs.svg#icon-menu-close"></use>
+                </svg>
+                </button>
+              </div>
+           </div>
 
-            <button class="modal__close" data-modal-close>
-            <svg class="modal__close--icon" width="30" height="30">
-              <use href="./img/symbol-defs.svg#icon-menu-close"></use>
-            </svg>
-            </button>
-          <div class="container__left">
-
+          <div>
           <form class="burger__search">
             <button type="submit">
               <svg fill="#fd5103" width="24" height="24">
@@ -87,21 +89,25 @@
     
             <input type="text" autocomplete="off" name="search" class="search__input" placeholder="Search |">
           </form>
+
           <nav class="burger__nav">
             <a href="./index.html">Home</a>
             <div class="dropdown burger__nav--btn">
               <button class="dropbtn">Favorite
-                <svg width="24" height="24">
+                <svg class="icon__arrow" width="24" height="24">
                   <use href="./img/symbol-defs.svg#icon-arrow"></use>
                 </svg>
               </button>
+
               <div class="dropdown-content dropdown-content__burger">
-                <a href="#">Favorite cocktails</a>
-                <a href="#">Favorite ingredients</a>
+                <a href="./favorite-cocktails.html">Favorite cocktails</a>
+                <a href="./favorite-ingredients.html">Favorite ingredients</a>
               </div>
             </div>
           </nav>
+          </div>
+
+          </div>
         </div>
       </div>
-    </div>
 </header>
