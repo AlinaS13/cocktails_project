@@ -36,6 +36,7 @@ console.log(resData)
   } else {
     onError();
   }
+  e.target.elements[1].value = "";
 }
 
 // ========= Sorry Section =========
