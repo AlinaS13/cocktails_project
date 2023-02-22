@@ -1,0 +1,140 @@
+.backdrop-coctail-igredient-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(1px);
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.coctail-igredient-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  animation-fill-mode: none;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+
+  &__container {
+    background-color: #111;
+    width: 320px;
+    height: 400px;
+    padding: 40px 20px;
+    position: relative;
+
+    @include tablet {
+      width: 715px;
+      padding-right: 28px;
+      padding-top: 40px;
+      padding-left: 28;
+      padding-bottom: 28px;
+    }
+  }
+  &__wrap {
+    background: var(--light-bg-color);
+    width: 320px;
+    max-height: 98%;
+    max-height: 673px;
+    padding-top: 40px;
+    padding-left: 15px;
+    padding-right: 25px;
+
+    @include tablet {
+      width: 715px;
+      max-height: 557px;
+      padding-left: 28px;
+      padding-right: 33px;
+    }
+
+    @include desktop {
+      width: 715px;
+      max-height: 557px;
+    }
+  }
+}
+//js
+.modal-cocktail-ingredients-name {
+  margin-bottom: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.18;
+  color: var(--dark-text-color);
+
+  @include tablet {
+    margin-bottom: 28px;
+  }
+}
+
+.modal-cocktail-ingredients-title {
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.62;
+  text-transform: uppercase;
+  color: var(--dark-text-color);
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+
+.modal-cocktail-ingredients-line {
+  display: none;
+
+  @include tablet {
+    display: block;
+    border: 1px solid #fd5103;
+    height: 0;
+    width: 100%;
+    margin-bottom: 28px;
+  }
+}
+
+.modal-cocktail-ingredients-text {
+  margin-bottom: 29px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #5f6775;
+}
+
+.modal-cocktail-ingredients-description-list {
+  margin-bottom: 32px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.62;
+  color: #000917;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+
+// .coctail-igredient-modal-close{
+
+// }
