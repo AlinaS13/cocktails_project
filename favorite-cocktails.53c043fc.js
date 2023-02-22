@@ -1,0 +1,2 @@
+!function(){var e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]"),searchInput:document.querySelector("#search-input")};function t(){e.modal.classList.toggle("is-hidden")}e.openModalBtn.addEventListener("click",t),e.closeModalBtn.addEventListener("click",t),e.searchInput.addEventListener("keydown",(function(e){"Enter"===e.key&&t()}))}();
+//# sourceMappingURL=favorite-cocktails.53c043fc.js.map
