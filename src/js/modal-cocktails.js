@@ -3,6 +3,11 @@ import { getSetLS } from './localStoregeaAddRemowe';
 import { keys } from './localStoregeKeys';
 const fetchCocktailDetailsById = fetch.fetchCocktailDetailsById;
 import { createIngredientContentsMarkup } from './modal-ingredients';
+const svgLink = require('../img/icons.svg');
+
+const svg = ` &nbsp<svg class="icon" width="21" height="19">
+<use href="${svgLink}#icon-heart-empty"></use>
+</svg>`;
 //
 //
 
@@ -52,6 +57,13 @@ export function onGalleryClick(e) {
         : 'Remove';
 
       getSetLS(Number(e.target.id));
+
+      const card = document.querySelector(`[data-id='${e.target.id}']`);
+      document.getElementById(`${e.target.id}`).innerHTML = `${
+        ls.includes(drinkId) ? 'Add to ' + svg : 'Remove'
+      }`;
+      console.log(e.target.id);
+      console.log(card);
     });
     const ingredientModal = document.querySelectorAll('.JSIngridients');
     ingredientModal.forEach(item => {
