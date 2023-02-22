@@ -44,7 +44,7 @@ async function openIngredientModal(ingredientName) {
   refs.modal.classList.remove('is-hidden');
 }
 
-function createIngredientContentsMarkup({
+export function createIngredientContentsMarkup({
   strIngredient,
   strAlcohol,
   strType,
@@ -56,12 +56,13 @@ function createIngredientContentsMarkup({
             <div class="modal-cocktail-ingredients-line"></div>
             <p class="modal-cocktail-ingredients-text">${strDescription}</p>
             <ul class="modal-cocktail-ingredients-description-list">
-            ${strType} ? <li>Type: ${strType}</li> : ''}
-            ${strAlcohol} ? <li>Alcohol by volume: ${strAlcohol}</li> : ''}
+            ${strType ? '<li>Type:&nbsp ' + strType + '</li>' : ''}
+            ${
+              strAlcohol
+                ? '<li>Alcohol by volume:&nbsp ' + strAlcohol + '</li>'
+                : ''
+            }
             <li></li>
             </ul>
-            <button type="button" class="button-more modal-add">
-            Add to favorite
-          </button>
             `;
 }
