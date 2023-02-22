@@ -56,13 +56,16 @@ export function createIngredientContentsMarkup({
             <div class="modal-cocktail-ingredients-line"></div>
             <p class="modal-cocktail-ingredients-text">${strDescription}</p>
             <ul class="modal-cocktail-ingredients-description-list">
-            ${strType ? '<li>Type:&nbsp ' + strType + '</li>' : ''}
+            ${strType ? '<li class ="text-ingridient"><span class ="ingridient-start">✶</span>&nbspType:&nbsp ' + strType + '</li>' : ''}
             ${
               strAlcohol
-                ? '<li>Alcohol by volume:&nbsp ' + strAlcohol + '</li>'
+                ? '<li class ="text-ingridient"><span class ="ingridient-start">✶</span>&nbspAlcohol by volume:&nbsp ' + strAlcohol + '</li>'
                 : ''
             }
             <li></li>
             </ul>
+            <button type="button" class="button-more modal-add button-more__ingridients">
+              Add to favorite
+            </button>
             `;
 }

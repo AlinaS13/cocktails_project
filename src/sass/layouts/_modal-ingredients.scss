@@ -128,7 +128,7 @@
   line-height: 1.75;
   color: #5f6775;
   height: 120px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .modal-cocktail-ingredients-description-list {
@@ -159,3 +159,10 @@
     margin-left: 500px;
     margin-right: 28px;
   }
+  
+  .text-ingridient{
+    color: var(--primary-text-color);
+  }
+  // .ingridient-start {
+  //   color: var(--primary-text-color);
+  // }
