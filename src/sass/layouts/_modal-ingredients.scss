@@ -1,5 +1,5 @@
 .backdrop-coctail-igredient-modal {
-  z-index: 888;
+  // z-index: 888;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,6 +28,7 @@
   justify-content: center;
   flex-direction: column;
   display: flex;
+  background: #b3b3b3;
 
   &__container {
     background-color: #111;
@@ -45,8 +46,26 @@
     }
   }
   &__wrap {
+    background: var(--light-bg-color);
+    // z-index: 100;
+    width: 320px;
     max-height: 98%;
-    overflow-y: auto;
+    max-height: 673px;
+    padding-top: 40px;
+    padding-left: 15px;
+    padding-right: 25px;
+
+    @include tablet {
+      width: 715px;
+      max-height: 557px;
+      padding-left: 28px;
+      padding-right: 33px;
+    }
+
+    @include desktop {
+      width: 715px;
+      max-height: 557px;
+    }
   }
 }
 //js

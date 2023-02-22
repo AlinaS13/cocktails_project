@@ -55,10 +55,19 @@ function onGalleryClick(e) {
     ingredientModal.forEach(item => {
       item.addEventListener('click', e => {
         e.preventDefault();
-        refs.ingridienrsModal.classList.remove('.is-hidden');
-        console.log(refs.ingridienrsModal);
 
-        console.log(e.target.textContent);
+        // this is the name of ingridient
+        // e.target.dataset.name;
+
+        // here we call fetch (www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka) by name above
+        // fetch()
+
+        // parse response data and put/replace! them to modal (refs.ingridienrsModal)
+        // then show the modal
+        refs.ingridienrsModal.classList.remove('is-hidden');
+
+        // console.log(refs.ingridienrsModal);
+        // console.log(e.target.textContent);
       });
     });
   });
@@ -76,7 +85,10 @@ function createCoctailInfoMarkup({
   const ingredients = [];
   for (let i = 1; i <= 15; i++) {
     if (rest[`strIngredient` + i]) {
-      ingredients.push(rest[`strMeasure` + i] + rest[`strIngredient` + i]);
+      ingredients.push({
+        measure: rest[`strMeasure` + i],
+        name: rest[`strIngredient` + i],
+      });
     } else break;
   }
 
@@ -96,10 +108,10 @@ function createCoctailInfoMarkup({
         <h3 class="modal-per-cocktail">Per cocktail</h3>
         <ul class="modal-cocktail-ingredients-list">
             ${ingredients
-              .map(function (ingredient) {
+              .map(function ({ measure, name }) {
                 return `
                 <li>
-                    <a href="" class = "JSIngridients">✶ ${ingredient}</a>
+                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal">✶ ${measure} ${name}</a>
                 </li>`;
               })
               .join('')}
