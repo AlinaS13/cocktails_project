@@ -130,7 +130,7 @@ function createCoctailInfoMarkup({
               .map(function ({ measure, name }) {
                 return `
                 <li>
-                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal">✶ ${measure} ${name}</a>
+                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal"><span class ="ingridient-start">✶</span> ${measure} ${name}</a>
                 </li>`;
               })
               .join('')}
