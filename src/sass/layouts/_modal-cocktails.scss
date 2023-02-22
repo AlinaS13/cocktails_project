@@ -13,7 +13,6 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(1px);
-
   &.is-hidden {
     opacity: 0;
     pointer-events: none;
@@ -21,6 +20,9 @@
   }
 }
 
+body.backdrop-coctail-info-modal {
+  overflow: hidden ;
+}
 .cocktail-info-modal-contents {
   @include tablet {
     align-self: stretch;
@@ -71,6 +73,7 @@
   &__wrap {
     max-height: 98%;
     overflow-y: auto;
+    z-index: 900;
   }
 }
 
@@ -184,6 +187,10 @@ button.coctail-info-modal-close {
 
 .JSIngridients:hover {
   color: var(--brend-color);
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 // .button-more.modal-add {

@@ -17,7 +17,6 @@ refs.closeModalBtn.addEventListener('click', closeModal);
 refs.modalBackdrop.addEventListener('click', e => {
   closeModal();
 });
-console.log(refs.modal);
 function closeModal() {
   refs.modal.classList.add('is-hidden');
 }
@@ -34,6 +33,7 @@ refs.modalCoctailInfoContents.addEventListener('click', function (e) {
 });
 
 async function openIngredientModal(ingredientName) {
+  
   let ingredients = (await fetch.fetchIngredientByName(ingredientName))
     .ingredients;
 
