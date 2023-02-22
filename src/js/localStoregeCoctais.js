@@ -2,7 +2,6 @@ import fetchData from './fetch';
 import renderFunc from './renderFunc';
 import { onGalleryClick } from './modal-cocktails';
 const modal = document.querySelector('.coctail-info-modal ');
-console.log(modal);
 const favCoctailsList = document.querySelector('.coctails__list');
 const buttonMore = document.querySelector('.button-more');
 const soryCoctail = document.querySelector('.coctails-sorry');
@@ -37,7 +36,7 @@ async function renderFavoriteCoctails() {
     return fetchData.fetchCocktailDetailsById(num);
   });
   const response = await Promise.all(getFotoByLSID);
-  console.log(response);
+ 
   const result = response.map(({ drinks }) => drinks).flat(1);
   favCoctailsList?.insertAdjacentHTML(
     'afterbegin',
@@ -55,7 +54,6 @@ const onRemoveBtn = event => {
   if (event.target.className === 'button-add') {
     drinksObject.splice(drinksObject.indexOf(Number(event.target.id)), 1);
     localStorage.setItem(keys.localCoctailsKey, JSON.stringify(drinksObject));
-    console.log(event.target.id);
 
     renderFavoriteCoctails();
   }

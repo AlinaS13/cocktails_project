@@ -58,8 +58,6 @@ export function onGalleryClick(e) {
       document.getElementById(`${e.target.id}`).innerHTML = `${
         ls.includes(drinkId) ? 'Add to ' + svg : 'Remove'
       }`;
-      console.log(e.target.id);
-      console.log(card);
     });
     const ingredientModal = document.querySelectorAll('.JSIngridients');
     ingredientModal.forEach(item => {
@@ -140,4 +138,3 @@ function createCoctailInfoMarkup({
     localStorageFM?.includes(idDrink) ? 'Remove' : 'Add to favorit'
   }</button></div>`;
 }
-console.log('afsdf');

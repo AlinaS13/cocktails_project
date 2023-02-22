@@ -42,7 +42,7 @@ function checkClientViewPort() {
 // const objKey = checkClientViewPort();
 
 const itemsPerPage = checkClientViewPort();
-console.log(itemsPerPage);
+
 
 const paginationBlock = document.querySelector('.pagination-box');
 const paginationList = document.querySelector('.pagination-list');
@@ -55,7 +55,7 @@ const svg = ` &nbsp<svg class="icon" width="21" height="19">
 function createMarkup(arr) {
   const a = localStorage.getItem(keys.localCoctailsKey);
 
-  // console.log(arr)
+
   let markup = arr.map(
     ({ strDrinkThumb, strDrink, idDrink }) => `
         <li class="gallery__card" data-id=${idDrink}>
