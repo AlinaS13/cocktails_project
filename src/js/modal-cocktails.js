@@ -3,28 +3,34 @@ import { getSetLS } from './localStoregeaAddRemowe';
 import { keys } from './localStoregeKeys';
 const fetchCocktailDetailsById = fetch.fetchCocktailDetailsById;
 import { createIngredientContentsMarkup } from './modal-ingredients';
+const svgLink = require('../img/icons.svg');
+
+const svg = ` &nbsp<svg class="icon" width="21" height="19">
+<use href="${svgLink}#icon-heart-empty"></use>
+</svg>`;
 //
+
 const refs = {
   ingridienrsModal: document.querySelector('.coctail-igredient-modal'),
   galleryContainer: document.querySelector('.gallery__list'),
+  coctailsContainer: document.querySelector('.coctails__list'),
   closeModalBtn: document.querySelector('[data-coctail-info-modal-close]'),
   modal: document.querySelector('[data-coctail-info-modal]'),
   modalBackdrop: document.querySelector('.backdrop-coctail-info-modal'),
   modalInnerContainer: document.querySelector('.cocktail-info-modal-contents'),
 };
 
-refs.galleryContainer.addEventListener('click', onGalleryClick);
-refs.closeModalBtn.addEventListener('click', closeModal);
-refs.modalBackdrop.addEventListener('click', e => {
+refs.galleryContainer?.addEventListener('click', onGalleryClick);
+refs.closeModalBtn?.addEventListener('click', closeModal);
+refs.modalBackdrop?.addEventListener('click', e => {
   closeModal();
 });
 
 function closeModal() {
   refs.modal.classList.add('is-hidden');
-  document.body.classList.remove("modal-open");
-
+  document.body.classList.remove('modal-open');
 }
-function onGalleryClick(e) {
+export function onGalleryClick(e) {
   if (!e.target.matches('.button-more')) {
     return;
   }
@@ -47,6 +53,13 @@ function onGalleryClick(e) {
         : 'Remove';
 
       getSetLS(Number(e.target.id));
+
+      const card = document.querySelector(`[data-id='${e.target.id}']`);
+      document.getElementById(`${e.target.id}`).innerHTML = `${
+        ls.includes(drinkId) ? 'Add to ' + svg : 'Remove'
+      }`;
+      console.log(e.target.id);
+      console.log(card);
     });
     const ingredientModal = document.querySelectorAll('.JSIngridients');
     ingredientModal.forEach(item => {
@@ -71,14 +84,13 @@ function onGalleryClick(e) {
         // parse response data and put/replace! them to modal (refs.ingridienrsModal)
         // then show the modal
         refs.ingridienrsModal.classList.remove('is-hidden');
-        
 
         // console.log(refs.ingridienrsModal);
         // console.log(e.target.textContent);
       });
     });
   });
-  document.body.classList.add("modal-open");
+  document.body.classList.add('modal-open');
   refs.modal.classList.remove('is-hidden');
 }
 
@@ -128,3 +140,4 @@ function createCoctailInfoMarkup({
     localStorageFM?.includes(idDrink) ? 'Remove' : 'Add to favorit'
   }</button></div>`;
 }
+console.log('afsdf');

@@ -58,7 +58,7 @@ function createMarkup(arr) {
   // console.log(arr)
   let markup = arr.map(
     ({ strDrinkThumb, strDrink, idDrink }) => `
-        <li class="gallery__card">
+        <li class="gallery__card" data-id=${idDrink}>
             <a class="gallery__link">
             <img src='${strDrinkThumb}' alt='${strDrink}' class="gallery__photo" loading='lazy'/>
              <div class="gallery__info">

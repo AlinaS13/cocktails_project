@@ -6,6 +6,7 @@
   text-align: center;
 }
 .coctails-title {
+  color: var(--dark-text-color);
   font-family: 'Poppins', sans-serif;
   @include font(600, 22px, 42px, 1.5);
 
@@ -16,13 +17,36 @@
     @include font(700, 48px, 72px, 1.5);
   }
 }
+.coctails-sorry {
+  width: 100%;
+}
+.sorry__title-coctails {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.9;
+
+  font-style: normal;
+  color: var(--dark-text-color);
+
+  @include tablet {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.3;
+  }
+  @include desktop {
+    font-family: 'Poppins';
+    font-size: 48px;
+    line-height: 1.5;
+  }
+}
 
 .coctails__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 60px;
-  width: 280px;
+
   @include tablet {
     display: grid;
     grid-template-columns: repeat(2, 335px);
