@@ -12,7 +12,7 @@
   transition-property: opacity;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  // z-index: 777;
+  z-index: 10;
 
   &.is-hidden {
     opacity: 0;
@@ -26,9 +26,10 @@
     align-self: stretch;
     row-gap: 28px;
     column-gap: 32px;
-    display: grid;
-    grid-template-columns: 288px auto;
+
     grid-template-rows: auto auto;
+    grid-template-columns: 288px auto;
+    display: grid;
   }
 }
 
@@ -48,31 +49,34 @@
 
   &__container {
     background-color: var(--light-bg-color);
-    width: 320px;
-    padding: 40px 25px 20px;
-    position: relative;
+    width: 822px;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 28px 28px 0;
+    display: flex;
 
-    @include tablet {
-      width: 822px;
-      padding-right: 28px;
-      padding-top: 0;
-      padding-left: 0;
-      padding-bottom: 28px;
-      align-items: flex-end;
-      flex-direction: column;
-      display: flex;
-    }
+    // @include tablet {
+    //   width: 822px;
+    //   padding-right: 28px;
+    //   padding-top: 0;
+    //   padding-left: 0;
+    //   padding-bottom: 28px;
+    //   align-items: flex-end;
+    //   flex-direction: column;
+    //   display: flex;
+    // }
   }
 
   &__wrap {
     max-height: 98%;
     overflow-y: auto;
+    z-index: 20;
   }
 }
 
 button.coctail-info-modal-close {
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: var(--light-bg-color);
   border: 0;
   width: 17px;
   height: 17px;
