@@ -9,12 +9,7 @@ const svg = ` &nbsp<svg class="icon" width="21" height="19">
 <use href="${svgLink}#icon-heart-empty"></use>
 </svg>`;
 //
-//
 
-// const constants = {
-//   GALLERY_CONTAINER_SELECTOR: '.gallery__list', ///TODO: проверить класс контейнера коктейлей
-//   LEARN_MORE_BUTTON_SELECTOR: '.button-more',
-// };
 const refs = {
   ingridienrsModal: document.querySelector('.coctail-igredient-modal'),
   galleryContainer: document.querySelector('.gallery__list'),
@@ -33,6 +28,7 @@ refs.modalBackdrop?.addEventListener('click', e => {
 
 function closeModal() {
   refs.modal.classList.add('is-hidden');
+  document.body.classList.remove('modal-open');
 }
 export function onGalleryClick(e) {
   if (!e.target.matches('.button-more')) {
@@ -72,9 +68,7 @@ export function onGalleryClick(e) {
 
         // this is the name of ingridient
         const data = e.target.dataset.name;
-        console.log(data);
         // here we call fetch (www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka) by name above
-        // fetch()
         const resp = await fetch.fetchIngredientByName(data);
         const finalResp = resp.ingredients[0];
         const keys = Object.keys(finalResp);
@@ -83,9 +77,7 @@ export function onGalleryClick(e) {
             finalResp[key] = '';
           }
         }
-        console.log(finalResp);
         const markupFF = createIngredientContentsMarkup(finalResp);
-        console.log(markupFF);
         refs.ingridienrsModal.querySelector(
           '.cocktail-ingredients-modal-contents'
         ).innerHTML = markupFF;
@@ -98,7 +90,7 @@ export function onGalleryClick(e) {
       });
     });
   });
-
+  document.body.classList.add('modal-open');
   refs.modal.classList.remove('is-hidden');
 }
 
