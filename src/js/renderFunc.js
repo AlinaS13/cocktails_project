@@ -132,6 +132,7 @@ function createMarkupPagination(response) {
   let markUpString = '';
 
   for (let i = 1; i <= pageCount; i++) {
+    if (i >= 6) break
     const pageToRender = currentPage * itemsPerPage;
     markUpString += `<li class="pagination-item">
     <button type="button" data-page='${i}' class="pagination-button">${i}</button>
