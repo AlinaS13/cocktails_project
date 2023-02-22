@@ -6,28 +6,29 @@ const fetchCocktailDetailsById = fetch.fetchCocktailDetailsById;
 //
 
 // const constants = {
-//   // GALLERY_CONTAINER_SELECTOR: '.gallery__list', ///TODO: проверить класс контейнера коктейлей
+//   GALLERY_CONTAINER_SELECTOR: '.gallery__list', ///TODO: проверить класс контейнера коктейлей
 //   LEARN_MORE_BUTTON_SELECTOR: '.button-more',
 // };
 const refs = {
   ingridienrsModal: document.querySelector('.coctail-igredient-modal'),
   galleryContainer: document.querySelector('.gallery__list'),
+  coctailsContainer: document.querySelector('.coctails__list'),
   closeModalBtn: document.querySelector('[data-coctail-info-modal-close]'),
   modal: document.querySelector('[data-coctail-info-modal]'),
   modalBackdrop: document.querySelector('.backdrop-coctail-info-modal'),
   modalInnerContainer: document.querySelector('.cocktail-info-modal-contents'),
 };
 
-refs.galleryContainer.addEventListener('click', onGalleryClick);
-refs.closeModalBtn.addEventListener('click', closeModal);
-refs.modalBackdrop.addEventListener('click', e => {
+refs.galleryContainer?.addEventListener('click', onGalleryClick);
+refs.closeModalBtn?.addEventListener('click', closeModal);
+refs.modalBackdrop?.addEventListener('click', e => {
   closeModal();
 });
 
 function closeModal() {
   refs.modal.classList.add('is-hidden');
 }
-function onGalleryClick(e) {
+export function onGalleryClick(e) {
   if (!e.target.matches('.button-more')) {
     return;
   }
@@ -109,3 +110,4 @@ function createCoctailInfoMarkup({
     localStorageFM?.includes(idDrink) ? 'Remove' : 'Add to favorit'
   }</button>`;
 }
+console.log('afsdf');
