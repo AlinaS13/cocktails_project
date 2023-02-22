@@ -1,3 +1,10 @@
+.icon {
+  fill: var(--heart-color);
+  &:hover {
+    fill: var(--hover-color);
+  }
+}
+
 .button-add {
     @include font(600, 14px, 1.71, 0.02em);
     display: flex;
@@ -19,6 +26,9 @@
     &:hover,
     &:focus {
       background-color: #f5f5f5;
+      .icon {
+        fill: var(--hover-color);
+      }
     }
     &:active {
       background-color: transparent;
