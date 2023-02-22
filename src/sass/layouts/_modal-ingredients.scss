@@ -1,5 +1,4 @@
 .backdrop-coctail-igredient-modal {
-  // z-index: 888;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,6 +12,13 @@
   transition-property: opacity;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(1px);
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
 }
 
 .coctail-igredient-modal {
@@ -28,7 +34,6 @@
   justify-content: center;
   flex-direction: column;
   display: flex;
-  background: #b3b3b3;
 
   &__container {
     background-color: #111;
@@ -47,7 +52,6 @@
   }
   &__wrap {
     background: var(--light-bg-color);
-    // z-index: 100;
     width: 320px;
     max-height: 98%;
     max-height: 673px;
@@ -130,3 +134,7 @@
     margin-bottom: 40px;
   }
 }
+
+// .coctail-igredient-modal-close{
+
+// }
