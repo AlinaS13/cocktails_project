@@ -6,6 +6,7 @@
   --dark-bg-color: #202025;
   --primary-text-color: #5f6775;
   --btn-color: #fe7031;
+  --btn-hover: #fcfcfc;
 
   --switch-bg: #fd5103;
   --switch-color: #fd5103;
@@ -15,6 +16,8 @@
 
   --checkbox-color-light: #fd5103;
   --checkbox-color-dark: #202025;
+  --heart-color: #f5f5f5;
+  --hover-color: #f5f5f5;
 }
 
 [data-theme='dark'] {
@@ -31,4 +34,7 @@
 
   --checkbox-color-light: #fcfcfc;
   --checkbox-color-dark: #fd5103;
+
+  --heart-color: #202025;
+  --hover-color: #f5f5f5;
 }
