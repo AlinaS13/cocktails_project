@@ -15,7 +15,7 @@ export function getSetLS(num) {
     localStorage.setItem(keys.localCoctailsKey, JSON.stringify(drinksObject));
     return;
   }
-  drinksObject.push(num);
+  drinksObject.unshift(num);
   localStorage.setItem(keys.localCoctailsKey, JSON.stringify(drinksObject));
   //   localStorage.setItem(keys.localCoctailsKey, drinksObject);
 }

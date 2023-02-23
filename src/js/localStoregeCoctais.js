@@ -1,20 +1,18 @@
 import fetchData from './fetch';
 import renderFunc from './renderFunc';
 import { onGalleryClick } from './modal-cocktails';
+import { keys } from './localStoregeKeys';
+import { getSetLS } from './localStoregeaAddRemowe';
+
 const modal = document.querySelector('.coctail-info-modal ');
-console.log(modal);
+
 const favCoctailsList = document.querySelector('.coctails__list');
 const buttonMore = document.querySelector('.button-more');
 const soryCoctail = document.querySelector('.coctails-sorry');
 
-const keys = {
-  localCoctailsKey: 'Favorit Coctails',
-  localIngredientsKey: 'Favorite ingredients',
-  localStorageTheme: 'Theme',
-};
 let drinksObject = [];
 const getLocalStorege = () => {
-  const savedCoctaisGalery = localStorage.getItem(keys.localCoctailsKey);
+  const savedCoctaisGalery = localStorage.getItem('Favorit Coctails');
   return JSON.parse(savedCoctaisGalery);
 };
 if (getLocalStorege()) {
@@ -45,7 +43,7 @@ async function renderFavoriteCoctails() {
   );
 }
 
-const onRemoveBtn = event => {
+const onBtnClick = event => {
   if (event.target.nodeName !== 'BUTTON') {
     return;
   }
@@ -53,12 +51,18 @@ const onRemoveBtn = event => {
     onGalleryClick(event);
   }
   if (event.target.className === 'button-add') {
-    drinksObject.splice(drinksObject.indexOf(Number(event.target.id)), 1);
-    localStorage.setItem(keys.localCoctailsKey, JSON.stringify(drinksObject));
-    console.log(event.target.id);
+    const a = localStorage.getItem(keys.localCoctailsKey);
+    if (a.includes(Number(event.target.id))) {
+      drinksObject.splice(drinksObject.indexOf(Number(event.target.id)), 1);
+      localStorage.setItem('Favorit Coctails', JSON.stringify(drinksObject));
+      console.log(event.target.id);
 
-    renderFavoriteCoctails();
+      renderFavoriteCoctails();
+    } else {
+      getSetLS(Number(event.target.id));
+      renderFavoriteCoctails();
+    }
   }
 };
 
-favCoctailsList?.addEventListener('click', onRemoveBtn);
+favCoctailsList?.addEventListener('click', onBtnClick);

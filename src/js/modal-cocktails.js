@@ -47,7 +47,7 @@ export function onGalleryClick(e) {
     //add to local storege
     const addTofav = document.querySelector('.modal-add');
     addTofav.addEventListener('click', e => {
-      const ls = localStorage.getItem(keys.localCoctailsKey);
+      const ls = localStorage.getItem('Favorit Coctails');
       e.target.textContent = ls?.includes(drinkId)
         ? 'Add to favorit'
         : 'Remove';
@@ -112,7 +112,7 @@ function createCoctailInfoMarkup({
   }
 
   //   console.log(ingredients);
-  const localStorageFM = localStorage.getItem(keys.localCoctailsKey);
+  const localStorageFM = localStorage.getItem('Favorit Coctails');
   return `
     <h1 class="modal-cocktail-name">${strDrink}</h1>
     <div class="modal-cocktail-instructions">
@@ -130,7 +130,7 @@ function createCoctailInfoMarkup({
               .map(function ({ measure, name }) {
                 return `
                 <li>
-                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal">✶ ${measure} ${name}</a>
+                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal">✶ ${measure === null ? '' : measure} ${name}</a>
                 </li>`;
               })
               .join('')}

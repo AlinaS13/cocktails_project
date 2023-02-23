@@ -1,14 +1,7 @@
-import { keys } from './localStoregeKeys';
+// import { keys } from './localStoregeKeys';
 import { getSetLS } from './localStoregeaAddRemowe';
+import { keys } from './localStoregeKeys';
 
-// const onAddClick = e => {
-//   if (e.target.className !== 'button-add') {
-//     return;
-//   }
-//   e.target.textContent = 'Remove';
-//   getSetLS(Number(e.target.id));
-// };
-// gallery?.addEventListener('click', onAddClick);
 const svgLink = require('../img/icons.svg');
 
 const gallery = document.querySelector('.gallery__list');
@@ -54,7 +47,7 @@ const svg = ` &nbsp<svg class="icon" width="21" height="19">
 // create markup function
 function createMarkup(arr) {
   const a = localStorage.getItem(keys.localCoctailsKey);
-
+  console.log(localStorage.getItem(keys.localCoctailsKey));
   // console.log(arr)
   let markup = arr.map(
     ({ strDrinkThumb, strDrink, idDrink }) => `
@@ -132,7 +125,7 @@ function createMarkupPagination(response) {
   let markUpString = '';
 
   for (let i = 1; i <= pageCount; i++) {
-    if (i >= 6) break
+    if (i >= 6) break;
     const pageToRender = currentPage * itemsPerPage;
     markUpString += `<li class="pagination-item">
     <button type="button" data-page='${i}' class="pagination-button">${i}</button>
@@ -161,13 +154,14 @@ function onClick(e) {
 import { getSetLS } from './localStoregeaAddRemowe';
 
 const onAddClick = e => {
-  const a = localStorage.getItem(keys.localCoctailsKey);
+  const ls = localStorage.getItem(keys.localCoctailsKey);
   if (e.target.className !== 'button-add') {
     return;
   }
-  e.target.innerHTML = a?.includes(Number(e.target.id))
+  e.target.innerHTML = ls?.includes(Number(e.target.id))
     ? 'Add to ' + svg
     : 'Remove';
+
   getSetLS(Number(e.target.id));
 };
 gallery?.addEventListener('click', onAddClick);
