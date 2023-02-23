@@ -1,6 +1,6 @@
 import fetch from './fetch';
-import { getSetLS } from './localStoregeaAddRemowe';
-import { keys } from './localStoregeKeys';
+import { getSetLS } from './localStorege/localStoregeaAddRemowe';
+import { keys } from './localStorege/localStoregeKeys';
 const fetchCocktailDetailsById = fetch.fetchCocktailDetailsById;
 import { createIngredientContentsMarkup } from './modal-ingredients';
 const svgLink = require('../img/icons.svg');
@@ -47,14 +47,14 @@ export function onGalleryClick(e) {
     //add to local storege
     const addTofav = document.querySelector('.modal-add');
     addTofav.addEventListener('click', e => {
-      const ls = localStorage.getItem(keys.localCoctailsKey);
+      const ls = localStorage.getItem('Favorit Coctails');
       e.target.textContent = ls?.includes(drinkId)
         ? 'Add to favorit'
         : 'Remove';
 
       getSetLS(Number(e.target.id));
 
-      const card = document.querySelector(`[data-id='${e.target.id}']`);
+      document.querySelector(`[data-id='${e.target.id}']`);
       document.getElementById(`${e.target.id}`).innerHTML = `${
         ls.includes(drinkId) ? 'Add to ' + svg : 'Remove'
       }`;
@@ -110,7 +110,7 @@ function createCoctailInfoMarkup({
   }
 
   //   console.log(ingredients);
-  const localStorageFM = localStorage.getItem(keys.localCoctailsKey);
+  const localStorageFM = localStorage.getItem('Favorit Coctails');
   return `
     <h1 class="modal-cocktail-name">${strDrink}</h1>
     <div class="modal-cocktail-instructions">
@@ -128,7 +128,7 @@ function createCoctailInfoMarkup({
               .map(function ({ measure, name }) {
                 return `
                 <li>
-                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal"><span class ="ingridient-start">✶</span> ${measure} ${name}</a>
+                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal">✶ ${measure} ${name}</a>
                 </li>`;
               })
               .join('')}
