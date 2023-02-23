@@ -1,7 +1,7 @@
 import fetch from './fetch';
 import './modal-cocktails';
-import { setIdIngridient } from './addRemoveIngredients';
-import { keys } from './localStoregeKeys';
+import { setIdIngridient } from './localStorege/addRemoveIngredients';
+import { keys } from './localStorege/localStoregeKeys';
 
 const test = document.querySelector('.test');
 
@@ -61,15 +61,20 @@ export function createIngredientContentsMarkup({
       '.button-more__ingridients'
     );
     addIngregientBtn?.addEventListener('click', e => {
-      setIdIngridient(Number(e.target.id));
       const ls = localStorage.getItem(keys.localIngredientsKey);
       e.target.textContent = ls?.includes(idIngredient)
         ? 'Remove'
         : 'Add to favorit';
+      setIdIngridient(Number(e.target.id));
+      document.querySelector(`[data-id='${e.target.id}']`);
+      document.getElementById(`${e.target.id}`).innerHTML = `${
+        ls.includes(idIngredient) ? 'Add to ' : 'Remove'
+      }`;
     });
     console.log(addIngregientBtn);
   }, 100);
   const ls = localStorage.getItem(keys.localIngredientsKey);
+
   return `
   <div data-ingredient=${idIngredient}></div>
   <h1 class="modal-cocktail-ingredients-name">${strIngredient}</h1>

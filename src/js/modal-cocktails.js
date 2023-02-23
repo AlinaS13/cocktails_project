@@ -1,6 +1,6 @@
 import fetch from './fetch';
-import { getSetLS } from './localStoregeaAddRemowe';
-import { keys } from './localStoregeKeys';
+import { getSetLS } from './localStorege/localStoregeaAddRemowe';
+import { keys } from './localStorege/localStoregeKeys';
 const fetchCocktailDetailsById = fetch.fetchCocktailDetailsById;
 import { createIngredientContentsMarkup } from './modal-ingredients';
 const svgLink = require('../img/icons.svg');
@@ -54,12 +54,10 @@ export function onGalleryClick(e) {
 
       getSetLS(Number(e.target.id));
 
-      const card = document.querySelector(`[data-id='${e.target.id}']`);
+      document.querySelector(`[data-id='${e.target.id}']`);
       document.getElementById(`${e.target.id}`).innerHTML = `${
         ls.includes(drinkId) ? 'Add to ' + svg : 'Remove'
       }`;
-      console.log(e.target.id);
-      console.log(card);
     });
     const ingredientModal = document.querySelectorAll('.JSIngridients');
     ingredientModal.forEach(item => {
@@ -130,7 +128,7 @@ function createCoctailInfoMarkup({
               .map(function ({ measure, name }) {
                 return `
                 <li>
-                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal">✶ ${measure === null ? '' : measure} ${name}</a>
+                    <a href="" class = "JSIngridients" data-name="${name}" role="show-ing-modal">✶ ${measure} ${name}</a>
                 </li>`;
               })
               .join('')}
@@ -140,4 +138,3 @@ function createCoctailInfoMarkup({
     localStorageFM?.includes(idDrink) ? 'Remove' : 'Add to favorit'
   }</button></div>`;
 }
-console.log('afsdf');

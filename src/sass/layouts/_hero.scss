@@ -354,3 +354,7 @@
     margin-bottom: 20px;
   }
 }
+.hero-search__btn:hover {
+  transform: rotate(60deg);
+  transition: transform 0.5s ease-in-out;
+}

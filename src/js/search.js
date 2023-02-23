@@ -6,8 +6,8 @@ import renderCocktails from '../js/renderFunc';
 
 // ============ Elements ===========
 const refsForm = {
-  form: document.querySelector(".search"),
-  formBurger: document.querySelector(".burger__search"),
+  form: document.querySelector('.search'),
+  formBurger: document.querySelector('.burger__search'),
   searchByLetter: document.querySelector('.hero-search'),
   letterBtn: document.querySelector('.hero-btn'),
   overlayArrow: document.querySelector('.hero-btn--arrow'),
@@ -22,13 +22,12 @@ refsForm.formBurger.addEventListener('submit', onSubmit);
 let searchName = '';
 
 async function onSubmit(e) {
-  e.preventDefault()
+  e.preventDefault();
 
   searchName = e.target.elements[1].value;
   // console.log(searchName)
   renderCocktails.fetchCoctails(fetchData.fetchCocktailByName, searchName);
   const resData = await fetchData.fetchCocktailByName(searchName);
-console.log(resData)
   if (resData?.drinks !== null) {
     refsForm.gallerySection.classList.remove('hidden');
     refsForm.errorPicture.classList.add('hidden');
@@ -36,7 +35,7 @@ console.log(resData)
   } else {
     onError();
   }
-  e.target.elements[1].value = "";
+  e.target.elements[1].value = '';
 }
 
 // ========= Sorry Section =========

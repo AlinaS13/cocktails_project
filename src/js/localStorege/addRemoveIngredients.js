@@ -18,7 +18,7 @@ export function setIdIngridient(num) {
     );
     return;
   }
-  inredientsObj.push(num);
+  inredientsObj.unshift(num);
   localStorage.setItem(keys.localIngredientsKey, JSON.stringify(inredientsObj));
   //   localStorage.setItem(keys.localCoctailsKey, drinksObject);
 }

@@ -1,6 +1,6 @@
 // import { keys } from './localStoregeKeys';
-import { getSetLS } from './localStoregeaAddRemowe';
-import { keys } from './localStoregeKeys';
+import { getSetLS } from './localStorege/localStoregeaAddRemowe';
+import { keys } from './localStorege/localStoregeKeys';
 
 const svgLink = require('../img/icons.svg');
 
@@ -35,7 +35,6 @@ function checkClientViewPort() {
 // const objKey = checkClientViewPort();
 
 const itemsPerPage = checkClientViewPort();
-console.log(itemsPerPage);
 
 const paginationBlock = document.querySelector('.pagination-box');
 const paginationList = document.querySelector('.pagination-list');
@@ -47,7 +46,7 @@ const svg = ` &nbsp<svg class="icon" width="21" height="19">
 // create markup function
 function createMarkup(arr) {
   const a = localStorage.getItem(keys.localCoctailsKey);
-  console.log(localStorage.getItem(keys.localCoctailsKey));
+
   // console.log(arr)
   let markup = arr.map(
     ({ strDrinkThumb, strDrink, idDrink }) => `
@@ -151,7 +150,7 @@ function onClick(e) {
 }
 //localStorage
 
-import { getSetLS } from './localStoregeaAddRemowe';
+import { getSetLS } from './localStorege/localStoregeaAddRemowe';
 
 const onAddClick = e => {
   const ls = localStorage.getItem(keys.localCoctailsKey);

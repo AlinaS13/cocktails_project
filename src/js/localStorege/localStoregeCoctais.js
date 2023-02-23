@@ -1,7 +1,7 @@
-import fetchData from './fetch';
-import renderFunc from './renderFunc';
-import { onGalleryClick } from './modal-cocktails';
-import { keys } from './localStoregeKeys';
+import fetchData from '../fetch';
+import renderFunc from '../renderFunc';
+import { onGalleryClick } from '../modal-cocktails';
+import { keys } from '../localStorege/localStoregeKeys';
 import { getSetLS } from './localStoregeaAddRemowe';
 
 const modal = document.querySelector('.coctail-info-modal ');
@@ -35,7 +35,7 @@ async function renderFavoriteCoctails() {
     return fetchData.fetchCocktailDetailsById(num);
   });
   const response = await Promise.all(getFotoByLSID);
-  console.log(response);
+
   const result = response.map(({ drinks }) => drinks).flat(1);
   favCoctailsList?.insertAdjacentHTML(
     'afterbegin',

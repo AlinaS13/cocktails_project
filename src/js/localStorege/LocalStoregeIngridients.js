@@ -1,7 +1,8 @@
-import fetchData from './fetch';
-import { openIngredientModal } from './modal-ingredients';
+import fetchData from '../fetch';
+import { openIngredientModal } from '../modal-ingredients';
+import { setIdIngridient } from './addRemoveIngredients';
 // import { onGalleryClick } from './modal-cocktails';
-import { keys } from './localStoregeKeys';
+import { keys } from '../localStorege/localStoregeKeys';
 // const modal = document.querySelector('.coctail-info-modal ');
 
 const favoritIngredientsGallery = document.querySelector('.ingredients-list');
@@ -31,7 +32,8 @@ if (!getLocalStorege() || getLocalStorege().length === 0) {
 
 //
 function createGalleryIngredients(arr) {
-  console.log(arr);
+  const a = localStorage.getItem(keys.localCoctailsKey);
+
   let markup = arr.map(
     ({ strIngredient, strAlcohol, strType, strDescription, idIngredient }) => {
       return `<li class="ingredient__card" data-id=${idIngredient}>
@@ -41,7 +43,9 @@ function createGalleryIngredients(arr) {
       }</p>
       <div class="button__container">
         <button type="button" class="button-more" id=${strIngredient}>Learn more</button>
-        <button type="button" class="button-remove" id=${idIngredient} >Remove</button>
+        <button type="button" class="button-remove" id=${idIngredient} >${
+        a?.includes(idIngredient) ? 'Add to ' : 'Remove '
+      }</button>
       </div>
       </li>`;
     }
@@ -74,14 +78,21 @@ const onBtnClick = event => {
     openIngredientModal(event.target.id);
   }
   if (event.target.className === 'button-remove') {
-    ingredientsObj.splice(ingredientsObj.indexOf(Number(event.target.id)), 1);
-    localStorage.setItem(
-      keys.localIngredientsKey,
-      JSON.stringify(ingredientsObj)
-    );
-    console.log(event.target.id);
+    const a = localStorage.getItem(keys.localIngredientsKey);
+    console.log(a);
+    if (a.includes(Number(event.target.id))) {
+      ingredientsObj.splice(ingredientsObj.indexOf(Number(event.target.id)), 1);
+      localStorage.setItem(
+        keys.localIngredientsKey,
+        JSON.stringify(ingredientsObj)
+      );
+      console.log(event.target.id);
 
-    renderFavoriteIngredients();
+      renderFavoriteIngredients();
+    } else {
+      setIdIngridient(Number(event.target.id));
+      renderFavoriteIngredients();
+    }
   }
 };
 
